@@ -5,7 +5,7 @@
   <div class="container container--slim">
     <div class="row">
       <div class="col-md-12">
-        <?php $content = get_field('disclaimer', 'option'); $logo = get_field('logo', 'option');?>
+        <?php $content = get_field('disclaimer', 'option'); $logo = get_field('logo', 'option'); $flogo = get_field('footer_logo', 'option');?>
         <?php echo $content;?>
       </div>
       <div class="col-md-8">
@@ -16,7 +16,7 @@
         </ul>
       </div>
       <div class="col-md-4">
-        <p class="logo"><img src="<?php echo $logo['url'];?>" alt="<?php echo $logo['alt'];?>"></p>
+        <p class="logo"><img src="<?php echo $logo['url'];?>" alt="<?php echo $logo['alt'];?>"><img src="<?php echo $flogo['url'];?>" alt="<?php echo $flogo['alt'];?>"></p>
       </div>
     </div>
   </div>
