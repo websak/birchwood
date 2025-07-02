@@ -1,0 +1,163 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $primary_font;
+  font-weight: 700;
+  font-style: normal;
+  transition: 1s ease-out 0.3s;
+}
+
+h1 {
+  font-weight: $font-700;
+  color: color(white);
+  font-size: 64px;
+  line-height: 72px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-weight: $font-500;
+  font-size: 42px;
+  line-height: 48px;
+  margin-bottom: 20px;
+
+  @media (max-width: $md - 1px) {
+    font-size: 40px;
+    line-height: 54px;
+  }
+
+}
+
+h3 {
+  font-size: 50px;
+  line-height: 34px;
+  margin-bottom: 10px;
+}
+
+h4 {
+  font-size: 40px;
+  line-height: 32px;
+  margin-bottom: 10px;
+}
+
+h5 {
+  font-size: 30px;
+  line-height: 30px;
+  margin-bottom: 10px;
+}
+
+h6 {
+  font-size: 28px;
+  line-height: 28px;
+  margin-bottom: 10px;
+}
+
+p {
+  color: color(black);
+  font-weight: $font-400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* paragraph text */
+
+li,
+span,
+button,
+label {
+
+  font-size: 17px;
+  line-height: 22px;
+  font-weight: $font-400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: $sm - 1px) {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
+p,
+li {
+  margin-bottom: 15px;
+  font-family: $primary_font;
+}
+
+
+a:hover {
+  color: color(black);
+}
+
+ol,
+ul {
+  padding-left: 0;
+  margin-bottom: 20px;
+
+  li {
+    list-style-position: inside;
+    font-family: $primary_font;
+  }
+}
+
+td,
+th {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 0px;
+  line-height: 0px;
+
+  @media (max-width: $sm - 1px) {
+    font-size: 0px;
+    line-height: 0px;
+  }
+}
+
+/* Generic */
+
+/* weights */
+
+.standard-text {
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.light {
+  font-weight: 100;
+}
+
+.book {
+  font-weight: 300;
+}
+
+.medium {
+  font-weight: 500;
+}
+
+.semi-bold,
+.semi-bold p {
+  font-weight: 600;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+/* classes */
+
+ul.no-bullets,
+ul.no-bullets li,
+ul.list-none {
+  list-style: none;
+}
+
+.capitals {
+  text-transform: uppercase;
+}
+
+.center {
+  text-align: center;
+}

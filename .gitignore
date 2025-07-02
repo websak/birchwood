@@ -1,0 +1,38 @@
+# ignore everything in the root except the "birchwood_system" directory.
+/*
+!birchwood_system/
+!_DB/
+!wp-config.php
+
+# ignore everything in the "birchwood_system" directory, except:
+# "mu-plugins", "plugins", "themes" directory
+birchwood_system/*
+!birchwood_system/mu-plugins/
+!birchwood_system/plugins/
+!birchwood_system/themes/
+!birchwood_system/languages/
+!birchwood_system/upgrade/
+
+# ignore these plugins
+birchwood_system/plugins/hello.php
+
+# ignore specific themes
+birchwood_system/themes/twenty*/
+
+# ignore node dependency directories
+node_modules/
+
+# ignore log files and databases
+*.log
+# *.sql
+*.sqlite
+
+# track these files, if they exist
+!.gitignore
+!.editorconfig
+!.phpcs.xml.dist
+!README.md
+!CHANGELOG.md
+!composer.json
+
+.vscode
