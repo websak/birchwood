@@ -1,0 +1,106 @@
+# Translation of Plugins - WP Duplicate Page - Development (trunk) in German
+# This file is distributed under the same license as the Plugins - WP Duplicate Page - Development (trunk) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2025-06-23 10:58:49+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.1\n"
+"Language: de\n"
+"Project-Id-Version: Plugins - WP Duplicate Page - Development (trunk)\n"
+
+#: views/pages/html-settings.php:111
+msgid "Save changes"
+msgstr "Änderungen speichern"
+
+#: views/pages/html-settings.php:104
+msgid "Text for duplicate page link. Default: "
+msgstr "Text für den Seiten-Link des Duplikats. Standard: "
+
+#: views/pages/html-settings.php:98
+msgid "Duplicate Page Link Text"
+msgstr "Duplikatseiten-Linktext"
+
+#: views/pages/html-settings.php:62
+msgid "Allowed Post Types"
+msgstr "Erlaubte Inhaltstypen"
+
+#: views/pages/html-settings.php:22
+msgid "Allowed User Roles"
+msgstr "Erlaubte Benutzerrollen"
+
+#. translators: 1: Plugin Title, 2: Link to review
+#: includes/Page/Settings.php:53
+msgid "Enjoyed %1$s? Please leave us a %2$s rating. We really appreciate your support!"
+msgstr "Hat dir %1$s gefallen? Bitte hinterlasse uns eine %2$s-Bewertung. Wir schätzen deine Unterstützung sehr!"
+
+#: includes/Page/Settings.php:43
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: includes/Page/Settings.php:34
+msgid "Duplicate Page"
+msgstr "Duplicate Page"
+
+#: includes/Page/Settings.php:34 views/pages/html-settings.php:16
+msgid "Duplicate Page Settings"
+msgstr "Duplicate-Page-Einstellungen"
+
+#: includes/Classes/CreateDuplicate.php:36
+msgid "Untitled"
+msgstr "Ohne Titel"
+
+#: includes/Classes/CreateDuplicate.php:25
+#: includes/Classes/CreateDuplicate.php:71
+msgid "Copy features for this post type are not enabled in setting page"
+msgstr "Kopierfunktionen für diesen Inhaltstyp sind auf der Einstellungsseite nicht aktiviert"
+
+#: includes/Classes/ButtonDuplicate.php:145
+msgid "No post to duplicate!"
+msgstr "Kein zu duplizierender Beitrag!"
+
+#: includes/Classes/ButtonDuplicate.php:141
+msgid "Current user is not allowed to duplicate ."
+msgstr "Dem aktuellen Benutzer ist das Duplizieren nicht erlaubt."
+
+#. translators: %s: Button Duplicate text.
+#: includes/Classes/ButtonDuplicate.php:106
+msgid " %s "
+msgstr " %s "
+
+#: includes/Classes/ButtonDuplicate.php:104 views/pages/html-settings.php:104
+msgid "Duplicate"
+msgstr "Duplizieren"
+
+#: includes/Classes/ButtonDuplicate.php:69
+#: includes/Classes/ButtonDuplicate.php:89
+#: includes/Classes/ButtonDuplicate.php:181
+msgid "Copy creation failed, could not find original:"
+msgstr "Erstellung der Kopie fehlgeschlagen, das Original konnte nicht gefunden werden:"
+
+#: includes/Classes/ButtonDuplicate.php:49
+msgid "%s"
+msgstr "%s"
+
+#. Author of the plugin
+#: wp-duplicate-page.php
+msgid "NinjaTeam"
+msgstr "NinjaTeam"
+
+#. Description of the plugin
+#: wp-duplicate-page.php
+msgid "Duplicate Posts, Pages and Custom Post Types."
+msgstr "Dupliziere Beiträge, Seiten und individuelle Inhaltstypen"
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+#: wp-duplicate-page.php
+msgid "https://ninjateam.org"
+msgstr "https://ninjateam.org"
+
+#. Plugin Name of the plugin
+#: wp-duplicate-page.php includes/Page/Settings.php:54
+msgid "WP Duplicate Page"
+msgstr "WP Duplicate Page"
