@@ -258,6 +258,37 @@ register_taxonomy(
 		// )
 	)  
 );
+
+// Downloads
+register_post_type('downloads', array(
+	'labels' => array(
+		'name'			=> __('Downloads', 'bwp'),
+		'singular_name'	=> __('Download', 'bwp'),
+		'menu_name'		=> __('Downloads', 'bwp')
+	),
+	'public'		=> true,
+	'has_archive'	=> false,
+	'menu_icon'		=> 'dashicons-book',
+	'show_in_rest'	=> true,
+	'supports'		=> array('title', 'editor','thumbnail'),
+	'rewrite'		=> array(
+		"slug"			=> "downloads",
+		// "with_front"	=> true
+	)
+));
+register_taxonomy(  
+	'download_category',
+	'downloads',
+	array(
+		'hierarchical'		=> true,
+		'label'				=> 'Category',
+		'query_var'			=> true,
+		'show_in_rest'		=> true,
+		// 'rewrite' => array(
+		// 	'slug'			=> 'c'
+		// )
+	)  
+);
 }
 add_action('init', 'setup_custom_post_types');
 
