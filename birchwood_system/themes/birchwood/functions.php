@@ -129,16 +129,88 @@ function register_acf_block_types() {
 
 
 	// Two Column Content With Stats
-	// acf_register_block_type(array(
-	// 	'name'				=> 'card-grid-content-with-stats',
-	// 	'title'				=> __('Two Column Content With Stats'),
-	// 	'description'		=> __('Two Column Content With Stats'),
-	// 	'render_template'	=> 'template-parts/blocks/card-grid-content-with-stats.php',
-	// 	'category'			=> 'formatting',
-	// 	'mode'	=> 'edit',
-	// 	'supports' => array('mode' => false, 'anchor' => true),
-	// 	'icon'				=> 'layout'
-	// ));
+	acf_register_block_type(array(
+		'name'				=> 'card-overlapping-cards',
+		'title'				=> __('Overlapping Cards'),
+		'description'		=> __('Overlapping Cards'),
+		'render_template'	=> 'template-parts/blocks/card-overlapping-cards.php',
+		'category'			=> 'formatting',
+		'mode'	=> 'edit',
+		'supports' => array('mode' => false, 'anchor' => true),
+		'icon'				=> 'layout'
+	));
+
+	// Highlighted Text
+	acf_register_block_type(array(
+		'name'				=> 'card-highligted-text',
+		'title'				=> __('Scrollable Highlighted Text'),
+		'description'		=> __('Scrollable Highlighted Text'),
+		'render_template'	=> 'template-parts/blocks/card-highlighted-text.php',
+		'category'			=> 'formatting',
+		'mode'	=> 'edit',
+		'supports' => array('mode' => false, 'anchor' => true),
+		'icon'				=> 'layout'
+	));
+
+	// Grid
+	acf_register_block_type(array(
+		'name'				=> 'card-grid',
+		'title'				=> __('Grid'),
+		'description'		=> __('Grid'),
+		'render_template'	=> 'template-parts/blocks/card-grid.php',
+		'category'			=> 'formatting',
+		'mode'	=> 'edit',
+		'supports' => array('mode' => false, 'anchor' => true),
+		'icon'				=> 'layout'
+	));
+
+	// Small Cards
+	acf_register_block_type(array(
+		'name'				=> 'card-small-cards',
+		'title'				=> __('Small Cards'),
+		'description'		=> __('Small Cards'),
+		'render_template'	=> 'template-parts/blocks/card-small-cards.php',
+		'category'			=> 'formatting',
+		'mode'	=> 'edit',
+		'supports' => array('mode' => false, 'anchor' => true),
+		'icon'				=> 'layout'
+	));
+
+	// Key Contacts
+	acf_register_block_type(array(
+		'name'				=> 'card-key-contacts',
+		'title'				=> __('Key Contacts'),
+		'description'		=> __('Key Contacts'),
+		'render_template'	=> 'template-parts/blocks/card-key-contacts.php',
+		'category'			=> 'formatting',
+		'mode'	=> 'edit',
+		'supports' => array('mode' => false, 'anchor' => true),
+		'icon'				=> 'layout'
+	));
+
+	// Image Slider
+	acf_register_block_type(array(
+		'name'				=> 'card-image-slider',
+		'title'				=> __('Image Slider'),
+		'description'		=> __('Image Slider'),
+		'render_template'	=> 'template-parts/blocks/card-image-slider.php',
+		'category'			=> 'formatting',
+		'mode'	=> 'edit',
+		'supports' => array('mode' => false, 'anchor' => true),
+		'icon'				=> 'layout'
+	));
+
+	//Video with stats
+	acf_register_block_type(array(
+		'name'				=> 'card-video-with-stats',
+		'title'				=> __('Video with stats'),
+		'description'		=> __('Video with stats'),
+		'render_template'	=> 'template-parts/blocks/card-video-with-stats.php',
+		'category'			=> 'formatting',
+		'mode'	=> 'edit',
+		'supports' => array('mode' => false, 'anchor' => true),
+		'icon'				=> 'layout'
+	));
 
 }
 
@@ -154,29 +226,40 @@ function set_acf_settings() {
 }
 
 //Register custom post types
-// function setup_custom_post_types(){
+function setup_custom_post_types(){
 
-// //Services
-// register_post_type('services', array(
-// 	'labels' => array(
-// 		'name'			=> __('Services', 'bva'),
-// 		'singular_name'	=> __('Services', 'bva'),
-// 		'menu_name'		=> __('Services', 'bva')
-// 	),
-// 	'public'		=> true,
-// 	'has_archive'	=> false,
-// 	'menu_icon'		=> 'dashicons-book',
-// 	'show_in_rest'	=> true,
-// 	'supports'		=> array('title', 'thumbnail', 'editor'),
-// 	'rewrite'		=> array(
-// 		"slug"			=> "services",
-// 		// "with_front"	=> true
-// 	)
-// ));
-
-
-// }
-// add_action('init', 'setup_custom_post_types');
+// Key Contacts
+register_post_type('team', array(
+	'labels' => array(
+		'name'			=> __('Team', 'bwp'),
+		'singular_name'	=> __('Team', 'bwp'),
+		'menu_name'		=> __('Team', 'bwp')
+	),
+	'public'		=> true,
+	'has_archive'	=> false,
+	'menu_icon'		=> 'dashicons-book',
+	'show_in_rest'	=> true,
+	'supports'		=> array('title', 'editor','thumbnail'),
+	'rewrite'		=> array(
+		"slug"			=> "team",
+		// "with_front"	=> true
+	)
+));
+register_taxonomy(  
+	'team_category',
+	'team',
+	array(
+		'hierarchical'		=> true,
+		'label'				=> 'Category',
+		'query_var'			=> true,
+		'show_in_rest'		=> true,
+		// 'rewrite' => array(
+		// 	'slug'			=> 'c'
+		// )
+	)  
+);
+}
+add_action('init', 'setup_custom_post_types');
 
 
 /**

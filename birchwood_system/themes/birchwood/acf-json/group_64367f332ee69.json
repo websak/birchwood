@@ -1,11 +1,11 @@
 {
-    "key": "group_663b9db4b9e4f",
-    "title": "Homepage Banner",
+    "key": "group_64367f332ee69",
+    "title": "Block: Key Contacts",
     "fields": [
         {
-            "key": "field_663b9db62d642",
-            "label": "Homepage Banner",
-            "name": "homepage_banner",
+            "key": "field_64367f340fbcd",
+            "label": "Card",
+            "name": "card",
             "aria-label": "",
             "type": "group",
             "instructions": "",
@@ -19,7 +19,7 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_663b9df92d644",
+                    "key": "field_64367f490fbce",
                     "label": "Title",
                     "name": "title",
                     "aria-label": "",
@@ -37,26 +37,6 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": ""
-                },
-                {
-                    "key": "field_663b9e092d645",
-                    "label": "Text",
-                    "name": "text",
-                    "aria-label": "",
-                    "type": "wysiwyg",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "tabs": "all",
-                    "toolbar": "full",
-                    "media_upload": 1,
-                    "delay": 0
                 }
             ]
         }
@@ -64,9 +44,9 @@
     "location": [
         [
             {
-                "param": "page_type",
+                "param": "block",
                 "operator": "==",
-                "value": "front_page"
+                "value": "acf\/card-key-contacts"
             }
         ]
     ],
@@ -79,5 +59,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1751636758
+    "modified": 1751619314
 }

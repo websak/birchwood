@@ -1,0 +1,108 @@
+.card-key-contacts {
+  padding: 75px 0 75px 0;
+
+  h2 {
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 15px;
+    color: color(green, darker);
+    font-size: 35px;
+  }
+
+  @media (min-width: 1024px) {
+    .col-md-2 {
+      &.small-card {
+        flex: 1 1 17.66667%;
+        max-width: 20.66667%;
+      }
+    }
+  }
+
+  .small-card {
+
+    .inner {
+      .image-container {
+        background-size: cover;
+        background-repeat: no-repeat;
+        min-height: 200px;
+        margin: 10px 0;
+        border-radius: 20px;
+      }
+
+      h3 {
+        color: color(green, darker);
+        font-size: 14px;
+        margin: 0 0 8px 0;
+      }
+
+      p {
+        color: color(green, darker);
+        margin: 0;
+        font-weight: $font-600;
+        font-size: 14px;
+
+        &.job_title {
+          color: color(green);
+        }
+
+        a {
+          &:hover {
+            color: color(green);
+          }
+        }
+      }
+    }
+  }
+
+  .team-filter-tabs {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    padding-top: 5px;
+
+    .filter-tab {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 30px;
+      background-color: color(grey);
+      color: color(green, darker);
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      font-weight: $font-600;
+      font-family: $primary_font;
+
+      &:hover {
+        background-color: #e0e0e0;
+      }
+
+      &.active {
+        background-color: color(green);
+        color: color(green, darker);
+      }
+    }
+  }
+
+  .team-member {
+    transition: all 0.3s ease;
+
+    &.hidden {
+      display: none;
+    }
+  }
+
+
+  @media (max-width: 768px) {
+    .team-filter-tabs {
+      justify-content: center;
+
+      .filter-tab {
+        font-size: 12px;
+        padding: 6px 12px;
+      }
+    }
+  }
+
+}

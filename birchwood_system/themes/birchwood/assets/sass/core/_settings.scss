@@ -2,7 +2,8 @@
 $global-font-size: 16px;
 $browser-context: 16;
 
-$primary_font: "Funnel Display", sans-serif;
+$primary_font: "Funnel Display",
+sans-serif;
 
 
 $font-400: 400;
@@ -13,7 +14,7 @@ $font-800: 800;
 $font-900: 900;
 
 //Colours
-$colors: (white: (base: #ffffff), black: (base: #1D1D1C), green:(base: #B3DB6D, dark: #42704c, darker: #1A382B));
+$colors: (white: (base: #ffffff), black: (base: #000000), grey:(base: #E7EAE9), green:(base: #B3DB6D, dark: #42704c, darker: #1A382B));
 
 
 // Color Function
@@ -21,9 +22,10 @@ $colors: (white: (base: #ffffff), black: (base: #1D1D1C), green:(base: #B3DB6D, 
   @return map-get(map-get($colors, $color), $tone);
 }
 
-// body {
-//   height: 100vh;
-// }
+body {
+  height: 100vh;
+  overflow-x: hidden;
+}
 
 // Border radius
 

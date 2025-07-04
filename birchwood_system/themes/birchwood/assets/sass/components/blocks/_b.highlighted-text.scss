@@ -1,0 +1,71 @@
+.card-highlighted-text {
+  padding: 75px 0;
+
+  .text-highlight-section {
+    // min-height: 50vh;
+    position: relative;
+  }
+
+  .highlight-container {
+    max-width: 1090px;
+    margin: 0 auto;
+
+    .highlight-text {
+      line-height: 50px;
+      color: color(green, darker);
+      text-align: center;
+
+      .word {
+        font-size: 35px;
+        display: inline-block;
+        margin: 0 0.2em 0 0;
+        color: color(green, darker);
+        font-weight: $font-700;
+        font-family: $primary_font;
+
+
+        &.highlighted {
+          opacity: 1;
+          transform: translateY(0);
+          color: #ff6b6b;
+          text-shadow: 0 2px 10px rgba(255, 107, 107, 0.3);
+        }
+
+
+      }
+    }
+  }
+
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    z-index: 1001;
+    transition: width 0.1s ease;
+  }
+
+  /* Alternative highlighting styles */
+  // .style-gradient .word.highlighted {
+  //   background: linear-gradient(45deg, #ff6b6b, #ffd93d, #6bcf7f, #4dabf7);
+  //   background-size: 300% 300%;
+  //   -webkit-background-clip: text;
+  //   background-clip: text;
+  //   -webkit-text-fill-color: transparent;
+  // }
+
+  // .style-glow .word.highlighted {
+  //   color: #fff;
+  //   background: #ff6b6b;
+  //   padding: 0.1em 0.3em;
+  //   border-radius: 8px;
+  //   box-shadow: 0 0 20px rgba(255, 107, 107, 0.6);
+  // }
+
+  // .style-underline .word.highlighted {
+  //   color: #333;
+  //   border-bottom: 3px solid #ff6b6b;
+  //   padding-bottom: 2px;
+  // }
+
+}

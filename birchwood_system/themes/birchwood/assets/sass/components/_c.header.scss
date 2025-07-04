@@ -2,11 +2,10 @@
 .header-mobile {
   background: color(green, dark);
   background: linear-gradient(90deg, rgba(color(green, dark), 1) 0%, rgba(color(green, darker), 1) 100%, rgba(color(green, darker), 1) 100%);
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  z-index: 2;
+  // position: absolute;
+  // left: 0;
+  // right: 0;
+  // z-index: 2;
   padding: 30px 0;
 
   @media (max-width: $sm - 1px) {
@@ -62,7 +61,7 @@
       font-size: 16px;
       padding: 15px 10px;
       border-radius: 100px;
-      font-weight: $font-400;
+      font-weight: $font-600;
       &:hover {
         color: color(green,dark);
       }
