@@ -1,0 +1,100 @@
+.card-two-column-title-image {
+  .inner {
+    border-radius: 20px;
+    margin: 10px 0;
+    padding: 40px 20px;
+
+    .body {
+      &.light {
+        .title_tag {
+          background-color: color(green, darker);
+          color: color(green);
+        }
+
+        h4 {
+          color: color(green, darker);
+        }
+
+        .bullet_list {
+          li {
+            color: color(green, darker);
+          }
+        }
+
+        .btn {
+          background-color: color(green, darker);
+          color: color(green);
+
+          &:after {
+            background-color: color(green);
+          }
+        }
+      }
+
+      &.dark {
+        .title_tag {
+          background-color: color(green);
+          color: color(green, darker);
+        }
+
+        h4 {
+          color: color(green);
+        }
+
+        .bullet_list {
+          li {
+            color: color(white);
+          }
+        }
+
+        .stat {
+          span {
+            color: color(green);
+          }
+        }
+
+        .description {
+          p {
+            color: color(white);
+          }
+        }
+
+        .btn {
+          background-color: color(green);
+          color: color(green, darker);
+
+          &:after {
+            background-color: color(green, darker);
+          }
+        }
+      }
+
+      .title_tag {
+        background-color: color(white);
+        border-radius: 30px;
+        padding: 10px 15px;
+        max-width: 150px;
+
+        h3 {
+          font-size: 12px;
+          line-height: 22px;
+          margin: 0;
+          font-weight: $font-400;
+        }
+      }
+
+
+      h4 {
+        font-size: 18px;
+        line-height: 24px;
+        margin: 15px 5px;
+      }
+    }
+    .image-container {
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+}

@@ -128,12 +128,72 @@ if(function_exists('acf_add_options_page')) {
 function register_acf_block_types() {
 
 
-	// Two Column Content With Stats
+	// Overlapping Cards
 	acf_register_block_type(array(
 		'name'				=> 'card-overlapping-cards',
 		'title'				=> __('Overlapping Cards'),
 		'description'		=> __('Overlapping Cards'),
 		'render_template'	=> 'template-parts/blocks/card-overlapping-cards.php',
+		'category'			=> 'formatting',
+		'mode'	=> 'edit',
+		'supports' => array('mode' => false, 'anchor' => true),
+		'icon'				=> 'layout'
+	));
+
+	// Two Column
+	acf_register_block_type(array(
+		'name'				=> 'card-two-column',
+		'title'				=> __('Two Column'),
+		'description'		=> __('Two Column'),
+		'render_template'	=> 'template-parts/blocks/card-two-column.php',
+		'category'			=> 'formatting',
+		'mode'	=> 'edit',
+		'supports' => array('mode' => false, 'anchor' => true),
+		'icon'				=> 'layout'
+	));
+
+	// Two Column Title / Text / Image
+	acf_register_block_type(array(
+		'name'				=> 'card-two-column-title-image',
+		'title'				=> __('Two Column Title / Text / Image'),
+		'description'		=> __('Two Column Title / Text / Image'),
+		'render_template'	=> 'template-parts/blocks/card-two-column-title-image.php',
+		'category'			=> 'formatting',
+		'mode'	=> 'edit',
+		'supports' => array('mode' => false, 'anchor' => true),
+		'icon'				=> 'layout'
+	));
+
+	// Title / Two Column Text
+	acf_register_block_type(array(
+		'name'				=> 'card-title-two-column-text',
+		'title'				=> __('Title / Two Column Text'),
+		'description'		=> __('Title / Two Column Text'),
+		'render_template'	=> 'template-parts/blocks/card-title-two-column-text.php',
+		'category'			=> 'formatting',
+		'mode'	=> 'edit',
+		'supports' => array('mode' => false, 'anchor' => true),
+		'icon'				=> 'layout'
+	));
+
+	// Data Table
+	acf_register_block_type(array(
+		'name'				=> 'card-table',
+		'title'				=> __('Table'),
+		'description'		=> __('Table'),
+		'render_template'	=> 'template-parts/blocks/card-table.php',
+		'category'			=> 'formatting',
+		'mode'	=> 'edit',
+		'supports' => array('mode' => false, 'anchor' => true),
+		'icon'				=> 'layout'
+	));
+
+	// Block
+	acf_register_block_type(array(
+		'name'				=> 'card-block',
+		'title'				=> __('Card'),
+		'description'		=> __('Card'),
+		'render_template'	=> 'template-parts/blocks/card-block.php',
 		'category'			=> 'formatting',
 		'mode'	=> 'edit',
 		'supports' => array('mode' => false, 'anchor' => true),
@@ -158,6 +218,18 @@ function register_acf_block_types() {
 		'title'				=> __('Grid'),
 		'description'		=> __('Grid'),
 		'render_template'	=> 'template-parts/blocks/card-grid.php',
+		'category'			=> 'formatting',
+		'mode'	=> 'edit',
+		'supports' => array('mode' => false, 'anchor' => true),
+		'icon'				=> 'layout'
+	));
+
+	// Grid Column
+	acf_register_block_type(array(
+		'name'				=> 'card-grid-column',
+		'title'				=> __('Grid Column'),
+		'description'		=> __('Grid Column'),
+		'render_template'	=> 'template-parts/blocks/card-grid-column.php',
 		'category'			=> 'formatting',
 		'mode'	=> 'edit',
 		'supports' => array('mode' => false, 'anchor' => true),
@@ -206,6 +278,30 @@ function register_acf_block_types() {
 		'title'				=> __('Video with stats'),
 		'description'		=> __('Video with stats'),
 		'render_template'	=> 'template-parts/blocks/card-video-with-stats.php',
+		'category'			=> 'formatting',
+		'mode'	=> 'edit',
+		'supports' => array('mode' => false, 'anchor' => true),
+		'icon'				=> 'layout'
+	));
+
+	//Iframe
+	acf_register_block_type(array(
+		'name'				=> 'card-iframe',
+		'title'				=> __('Iframe'),
+		'description'		=> __('Iframe'),
+		'render_template'	=> 'template-parts/blocks/card-iframe.php',
+		'category'			=> 'formatting',
+		'mode'	=> 'edit',
+		'supports' => array('mode' => false, 'anchor' => true),
+		'icon'				=> 'layout'
+	));
+
+	//Downloads
+	acf_register_block_type(array(
+		'name'				=> 'card-downloads',
+		'title'				=> __('Downloads'),
+		'description'		=> __('Downloads'),
+		'render_template'	=> 'template-parts/blocks/card-downloads.php',
 		'category'			=> 'formatting',
 		'mode'	=> 'edit',
 		'supports' => array('mode' => false, 'anchor' => true),

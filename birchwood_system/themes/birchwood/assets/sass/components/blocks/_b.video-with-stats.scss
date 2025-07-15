@@ -1,12 +1,19 @@
 .card-video-with-stats {
   position: relative;
-
+  
+  .content_wrapper {
+    position: sticky;
+    top: 0;
+    padding: 50px 0;
+  }
+  
   .image-container {
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 600px;
     border-radius: 70px;
     position: relative;
+    padding: 0 50px;
 
     &:before {
       background: rgba(color(black), .55);
@@ -18,4 +25,105 @@
       border-radius: 70px;
     }
   }
+
+  .stat-container {
+
+    .stat {
+      position: relative;
+      border-bottom: 1px solid color(green);
+      padding: 20px;
+      max-width: 500px;
+      width: 100%;
+
+      &:last-child {
+        border: none;
+      }
+
+      span {
+        font-size: 55px;
+        color: color(green);
+        font-weight: $font-800;
+        line-height: 69px;
+      }
+
+      .text {
+        display: flex;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+
+        p {
+          color: color(white);
+          font-weight: $font-400;
+          margin: 0;
+        }
+      }
+
+    }
+  }
+
+  .video-play-button {
+    position: absolute;
+    top:75%;
+    right: 0;   
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    color: white;
+    font-family: $primary_font;
+    font-weight: $font-700;
+    font-size: 28px;
+    line-height: 35px;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(color(green,darker), 0.9);
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 70px;
+
+    .video-close-button {
+      position: absolute;
+      top: 30px;
+      right: 50px;
+      cursor: pointer;
+      z-index: 30;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .video-wrapper {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16/9;
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 60px;
+    }
+  }
+
+  /* Hide play button when video is playing */
+  .video-playing .video-play-button {
+    display: none;
+  }
+
+
 }

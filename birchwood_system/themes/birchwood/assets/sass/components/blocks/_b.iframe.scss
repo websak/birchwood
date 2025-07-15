@@ -1,0 +1,11 @@
+.card-iframe {
+  padding: 75px 0;
+  .inner {
+    .body {
+      iframe {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

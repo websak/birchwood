@@ -1,49 +1,65 @@
 jQuery(document).ready(function () {
 
 
-	//service carousel
-	jQuery(".logo_carousel").slick({
-		dots: false,
-		arrows: false,
-		slidesToShow: 4,
-		slidesToScroll: 1,
-		infinite: false,
-		autoplay: true,
-	  autoplaySpeed: 4000,
-		responsive: [{
-				breakpoint: 1024,
-				settings: {
-					slidesToShow: 3,
-					slidesToScroll: 3
-				}
-			},
-			{
-				breakpoint: 600,
-				settings: {
-					slidesToShow: 2,
-					slidesToScroll: 2
-				}
-			},
-			{
-				breakpoint: 480,
-				settings: {
-					slidesToShow: 1,
-					slidesToScroll: 1
-				}
-			},
-			{
-				breakpoint: 1240,
-				settings: {
-					slidesToShow: 4,
-					slidesToScroll: 4
-				}
+//small card carousel
+//service carousel - marquee style
+jQuery(".card_carousel").slick({
+	dots: false,
+	arrows: false,
+	slidesToShow: 4,
+	slidesToScroll: 1,
+	infinite: true,
+	autoplay: false,
+	autoplaySpeed: 3, // Very fast
+	speed: 12000, // Smooth transition
+	cssEase: 'linear',
+	pauseOnHover: false,
+	pauseOnFocus: false,
+	pauseOnDotsHover: false,
+	responsive: [{
+			breakpoint: 1240,
+			settings: {
+				slidesToShow: 4,
+				slidesToScroll: 1
 			}
-			// You can unslick at a given breakpoint now by adding:
-			// settings: "unslick"
-			// instead of a settings object
-		]
-	});
+		},
+		{
+			breakpoint: 1024,
+			settings: {
+				slidesToShow: 3,
+				slidesToScroll: 1
+			}
+		},
+		{
+			breakpoint: 600,
+			settings: {
+				slidesToShow: 2,
+				slidesToScroll: 1
+			}
+		},
+		{
+			breakpoint: 480,
+			settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1
+			}
+		}
+	]
+});
 
+jQuery(".image_carousel").slick({
+			dots: false,
+			arrows: true,
+			slidesToShow: 1,
+			slidesToScroll: 1
+});
+jQuery('.slick-prev-custom').on('click', function () {
+	jQuery('.image_carousel').slick('slickPrev');
+});
+
+jQuery('.slick-next-custom').on('click', function () {
+	jQuery('.image_carousel').slick('slickNext');
+});
 
 
 });

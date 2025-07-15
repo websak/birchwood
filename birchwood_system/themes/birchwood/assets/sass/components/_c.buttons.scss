@@ -1,0 +1,30 @@
+.btn {
+  border-radius: 20px;
+  background-color: color(green);
+  color: color(green, darker);
+  padding: 12px 20px;
+  max-width: 138px;
+  font-size: 12px;
+  font-weight: $font-400;
+  position: relative;
+  display: flex;
+  align-items: center;
+  &:after {
+    content: '';
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    background: color(green,darker) url('../images/icons/arrow-down.svg');
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 100%;
+    right: 10px;
+  }
+  &:hover {
+    background-color: color(green,darker);
+    color: color(white);
+    &:after {
+      background-color: color(green);
+    }
+  }
+}

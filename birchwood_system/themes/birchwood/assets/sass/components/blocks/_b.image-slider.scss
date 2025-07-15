@@ -1,0 +1,95 @@
+.card-image-slider {
+  .image_carousel {
+    margin-top: -70px;
+    position: relative;
+
+    .image-container {
+      img {
+        border-bottom-right-radius: 70px;
+        border-bottom-left-radius: 70px;
+        width: 100%;
+      }
+
+      .block {
+        position: absolute;
+        background-color: color(white);
+        padding: 25px 25px 50px 25px;
+        bottom: 100px;
+        border-radius: 20px;
+        margin-left: 30px;
+        display: flex;
+        max-width: 790px;
+        width: 100%;
+
+        .col {
+          display: flex;
+          flex-direction: column;
+        }
+
+        h3 {
+          font-size: 35px;
+          font-weight: $font-700;
+          color: color(green, darker);
+          margin: 0;
+        }
+
+        p {
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+        }
+
+        .desc {
+          padding-top: 15px;
+        }
+      }
+    }
+  }
+
+  /* Custom Navigation Arrows */
+  .slick-navigation {
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+  }
+
+  .slick-prev-custom,
+  .slick-next-custom {
+    background: rgba(color(green), 1);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+  }
+
+  .slick-prev-custom:hover,
+  .slick-next-custom:hover {
+    background: rgba(color(green), 0.5);
+    transform: scale(1.1);
+  }
+
+}
+
+.page {
+  .image_carousel {
+    margin-top: revert;
+    padding-bottom: 75px;
+    .image-container {
+      img {
+        border-bottom-right-radius: 70px;
+        border-bottom-left-radius: 70px;
+        border-top-left-radius: 70px;
+        border-top-right-radius: 70px;
+        width: 100%;
+      }
+    }
+  }
+}
