@@ -8,6 +8,11 @@
   // z-index: 2;
   padding: 30px 0;
 
+  &.curved {
+    border-bottom-left-radius: 70px;
+    border-bottom-right-radius: 70px;
+  }
+  
   @media (max-width: $sm - 1px) {
     padding-top: 0;
   }

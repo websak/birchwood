@@ -32,7 +32,7 @@ $card = get_field("card");
 
 
 
-<section class="<?php echo esc_attr($className); ?>" id="<?php echo esc_attr($id); ?>">
+<section class="<?php echo esc_attr($className); ?><?php if(basename(get_page_template()) === 'page.php') :?> container container--slim<?php endif;?>" id="<?php echo esc_attr($id); ?>">
   <div class="container container--slim">
     <div class="row">
       <div class="col-md-12">

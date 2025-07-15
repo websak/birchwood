@@ -1,12 +1,13 @@
 .card-image-slider {
   .image_carousel {
-    margin-top: -70px;
     position: relative;
 
     .image-container {
       img {
         border-bottom-right-radius: 70px;
         border-bottom-left-radius: 70px;
+        border-top-left-radius: 70px;
+        border-top-right-radius: 70px;
         width: 100%;
       }
 
@@ -78,16 +79,16 @@
 
 }
 
-.page {
+.home {
   .image_carousel {
-    margin-top: revert;
-    padding-bottom: 75px;
+    margin-top: -70px;
+
     .image-container {
       img {
         border-bottom-right-radius: 70px;
         border-bottom-left-radius: 70px;
-        border-top-left-radius: 70px;
-        border-top-right-radius: 70px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
         width: 100%;
       }
     }

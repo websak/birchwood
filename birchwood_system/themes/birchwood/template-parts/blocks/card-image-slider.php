@@ -17,7 +17,8 @@ $card = get_field("card");
 //var_dump($card);
 ?>
 
-<section class="<?php echo esc_attr($className); ?>" id="<?php echo esc_attr($id); ?>">
+
+<section class="<?php echo esc_attr($className); ?><?php if(basename(get_page_template()) === 'page.php') :?> container container--slim<?php endif;?>" id="<?php echo esc_attr($id); ?>">
 	<?php if($card['image_slider']):?>
 		<div class="image_carousel">
 		<?php foreach($card['image_slider'] as $image):?>

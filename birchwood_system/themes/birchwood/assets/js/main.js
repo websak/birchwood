@@ -9,7 +9,7 @@ jQuery(".card_carousel").slick({
 	slidesToShow: 4,
 	slidesToScroll: 1,
 	infinite: true,
-	autoplay: false,
+	autoplay: true,
 	autoplaySpeed: 3, // Very fast
 	speed: 12000, // Smooth transition
 	cssEase: 'linear',

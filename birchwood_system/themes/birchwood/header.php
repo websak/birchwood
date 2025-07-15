@@ -14,7 +14,7 @@
 <?php $logo = get_field('logo', 'option');  ?>
 
 <!-- Desktop header -->
-<header class="header-desktop">
+<header class="header-desktop <?php if(basename(get_page_template()) === 'page.php') :?> curved<?php endif;?>">
 	<div class="container d-flex flex-wrap align-center">
 		<a href="/" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto">
 		<?php  $logo_url = $logo['url']; 	$logo_alt = $logo['alt']; ?>
@@ -32,7 +32,7 @@
 </header>
 
 <!-- Mobile header -->
-<header class="header-mobile">
+<header class="header-mobile <?php if(basename(get_page_template()) === 'page.php') :?> curved<?php endif;?>">
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container-fluid">
 			<div class="mobile_logo">

@@ -5,7 +5,7 @@ if( !empty($block['anchor']) ) {
 	$id = $block['anchor'];
 }
 
-$className = 'card-table';
+$className = 'card-iframe';
 if( !empty($block['className']) ) {
 	$className .= ' ' . $block['className'];
 }
