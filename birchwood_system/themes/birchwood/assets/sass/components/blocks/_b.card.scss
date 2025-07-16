@@ -61,6 +61,16 @@
             background-color: color(green, darker);
             color: color(green);
 
+            &:hover {
+              background: none;
+              border: 1px solid color(green, darker);
+              color: color(green, darker);
+
+              &:after {
+                background-color: color(green, darker);
+              }
+            }
+
             &:after {
               background-color: color(green);
             }
@@ -98,6 +108,16 @@
           .btn {
             background-color: color(green);
             color: color(green, darker);
+
+            &:hover {
+              background: none;
+              border: 1px solid color(green);
+              color: color(white);
+
+              &:after {
+                background-color: color(green);
+              }
+            }
 
             &:after {
               background-color: color(green, darker);
@@ -154,8 +174,9 @@
           &.two-column {
             display: block;
             column-count: 2;
+
             li {
-              &:last-child{
+              &:last-child {
                 margin-bottom: 10px;
               }
             }
@@ -202,10 +223,12 @@
           bottom: 40px;
           left: 20px;
           right: 20px;
+
           &.half {
             max-width: 564px;
             width: 100%;
           }
+
           p {
             color: color(green, darker);
             font-size: 14px;

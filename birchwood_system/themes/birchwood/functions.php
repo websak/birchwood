@@ -366,7 +366,7 @@ register_post_type('downloads', array(
 	'has_archive'	=> false,
 	'menu_icon'		=> 'dashicons-book',
 	'show_in_rest'	=> true,
-	'supports'		=> array('title', 'editor','thumbnail'),
+	'supports'		=> array('title', 'editor', 'excerpt', 'thumbnail'),
 	'rewrite'		=> array(
 		"slug"			=> "downloads",
 		// "with_front"	=> true

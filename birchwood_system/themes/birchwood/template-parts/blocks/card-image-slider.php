@@ -25,10 +25,10 @@ $card = get_field("card");
 			<div class="image-container">
 				<img src="<?php echo $image['image']['url'];?>">
 				<div class="block">
-					<div class="col-md-8">
+					<div class="<?php if(basename(get_page_template()) === 'page.php') :?> col-md-7 <?php else :?> col-md-8  <?php endif;?>">
 						<?php if($image['address']):?><h3><?php echo $image['address'];?></h3><?php endif;?>
 					</div>
-					<div class="col-md-4">
+					<div class="<?php if(basename(get_page_template()) === 'page.php') :?> col-md-5 <?php else :?> col-md-4  <?php endif;?>">
 						<?php if($image['description']):?><div class="desc"><?php echo $image['description'];?></div><?php endif;?>
 					</div>
 					<!-- Slick Slider Navigation Arrows -->

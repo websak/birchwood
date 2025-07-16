@@ -1,0 +1,90 @@
+.card-downloads {
+  padding: 60px 0;
+
+  .inner {
+    .body {
+      h2 {
+        color: color(green, darker);
+        font-size: 35px;
+        line-height: 44px
+      }
+    }
+  }
+
+  .dcard {
+    margin: 30px 0;
+    display: flex;
+
+    .inner {
+      background-repeat: no-repeat;
+      min-height: 351px;
+      padding: 0 40px;
+      display: flex;
+      height: 100%;
+      align-items: center;
+
+      .body {
+        h3 {
+          font-size: 21px;
+          font-weight: $font-700;
+          line-height: 21px;
+          max-width: 75px;
+          width: 100%;
+          padding-bottom: 20px;
+        }
+
+        .btn {
+          margin-top: 40px;
+        }
+
+        &.light {
+          h3 {
+            color: color(green);
+          }
+
+          .btn {
+            background-color: color(green);
+
+            &:hover {
+              background: none;
+              border: 1px solid color(green);
+            }
+          }
+        }
+
+        &.dark {
+          h3 {
+            color: color(green, darker);
+          }
+
+          .btn {
+            background-color: color(green, darker);
+            color: color(green);
+
+            &:after {
+              background-color: color(green);
+            }
+
+            &:hover {
+              background: none;
+              border: 1px solid color(green,darker);
+              color: color(green, darker);
+            }
+          }
+        }
+
+        .even {
+          p {
+            color: color(white);
+          }
+        }
+
+        .odd {
+          p {
+            color: color(green, darker);
+          }
+        }
+      }
+    }
+  }
+}
