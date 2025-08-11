@@ -8,37 +8,100 @@
         color: color(green);
         font-size: 35px;
         margin-bottom: 40px;
-
       }
+    }
+  }
+
+
+  // Container for cards to ensure equal heights
+  .cards-container {
+    // For responsive layouts
+    @media (max-width: 768px) {
+      flex-direction: column;
     }
   }
 
   .card {
     border-radius: 20px;
-    padding: 40px 20px;
-    margin: 10px 0;
-    min-height: 520px;
-    background-repeat: no-repeat;
+    padding: 40px 40px;
     position: relative;
     display: flex;
+    flex-direction: column;
     border: none;
+    flex: 1; // Makes cards equal width in flex container
+    overflow: hidden; // Ensure background image doesn't overflow
+
+    // Remove conflicting height constraints
+    min-height: unset; // Let flexbox handle height
+    margin: 20px 0; // Remove margin that could interfere with flex layout
 
     &.full {
-      background-size: cover;
+      min-height: 500px;
+
+      // Background image container
+      .card-background-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: top;
+        }
+      }
+
+      // Alternative: if you want to show the full image without cropping
+      &.show-full-image {
+        .card-background-image img {
+          object-fit: contain;
+        }
+      }
     }
 
     &.contained {
-      background-size: contain;
-      background-position: bottom;
+      .card-background-image {
+        img {
+          object-fit: contain;
+          object-position: bottom;
+        }
+      }
     }
 
     .inner {
+      display: flex;
+      flex-direction: column;
+      flex: 1; // Takes all available space in the card
+      height: 100%; // Ensure inner takes full card height
+      position: relative;
+      z-index: 2; // Ensure content is above background image
+
       .body {
+        flex: 1; // Takes available space
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        min-height: 0; // Allow flex item to shrink below content size
+
+        // Content area that grows to fill available space
+        .content-area {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          min-height: 0;
+        }
+
+        // Fixed positioned elements for buttons
         .btn {
           position: absolute;
           left: 20px;
-          right: 0;
-          bottom: 40px;
+          right: 20px;
+          bottom: 20px;
+          width: auto;
         }
 
         &.light {
@@ -61,18 +124,9 @@
             background-color: color(green, darker);
             color: color(green);
 
-            &:hover {
-              background: none;
-              border: 1px solid color(green, darker);
-              color: color(green, darker);
-
-              &:after {
-                background-color: color(green, darker);
-              }
-            }
-
-            &:after {
+            span {
               background-color: color(green);
+              color: color(green);
             }
           }
         }
@@ -107,20 +161,10 @@
 
           .btn {
             background-color: color(green);
-            color: color(green, darker);
 
-            &:hover {
-              background: none;
-              border: 1px solid color(green);
-              color: color(white);
-
-              &:after {
-                background-color: color(green);
-              }
-            }
-
-            &:after {
+            span {
               background-color: color(green, darker);
+              color: color(green, darker);
             }
           }
         }
@@ -129,33 +173,71 @@
           background-color: color(white);
           border-radius: 30px;
           padding: 10px 15px;
-          max-width: 150px;
+          display: inline-block;
+          width: fit-content;
+          max-width: calc(100% - 40px);
+          word-wrap: break-word;
+          text-align: center;
+          flex-shrink: 0; // Prevent shrinking
 
           h3 {
             font-size: 12px;
             line-height: 22px;
             margin: 0;
             font-weight: $font-400;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
           }
         }
 
+        .title_tag.multiline {
+          h3 {
+            white-space: normal;
+            overflow: visible;
+            text-overflow: clip;
+            line-height: 1.4;
+          }
+        }
 
         h4 {
           font-size: 18px;
           line-height: 24px;
           margin: 15px 5px;
+          flex-shrink: 0; // Prevent shrinking
         }
 
         .inner_image {
-          position: absolute;
-          bottom: 20px;
-          left: 0;
-          right: 0;
-          margin: 0 auto;
+          margin: 20px 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex: 1; // Takes remaining available space
+          min-height: 100px; // Minimum height
+          overflow: hidden;
+
+          img {
+            width: 100%;
+            height: 100%;
+            display: block;
+          }
+
+          &.contain {
+            img {
+              object-fit: contain;
+            }
+          }
+
+          &.fill {
+            img {
+              object-fit: fill;
+            }
+          }
         }
 
         .description {
           padding: 15px 5px;
+          flex-shrink: 0; // Prevent shrinking
 
           p {
             font-weight: $font-400;
@@ -167,35 +249,95 @@
         .bullet_list {
           display: flex;
           flex-direction: column;
+          list-style: none;
           list-style-type: none;
           padding: 20px 0;
+          padding-left: 0;
           margin: 0;
-
-          &.two-column {
-            display: block;
-            column-count: 2;
-
-            li {
-              &:last-child {
-                margin-bottom: 10px;
-              }
-            }
-          }
+          margin-left: 0;
+          flex-shrink: 0; // Prevent shrinking
 
           li {
             color: color(white);
             display: flex;
+            align-items: flex-start;
             font-size: 14px;
+            line-height: 1.5;
             margin-bottom: 25px;
+            list-style: none;
+            padding-left: 0;
 
             &:last-child {
-              margin: 0;
+              margin-bottom: 0;
+            }
+
+            &::before {
+              display: none;
+            }
+
+            .icon,
+            .bullet {
+              flex-shrink: 0;
+              width: 25px;
+              height: 21px;
+              margin-right: 12px;
+              margin-top: 2px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              svg {
+                width: 100%;
+                height: 100%;
+                fill: currentColor;
+              }
+
+              i {
+                font-size: 14px;
+                line-height: 1;
+              }
+
+              &:before {
+                content: "";
+                font-size: 16px;
+                line-height: 1;
+              }
+            }
+
+            .text,
+            span:not(.icon):not(.bullet) {
+              flex: 1;
+              line-height: 1.5;
+              word-wrap: break-word;
+              hyphens: auto;
             }
 
             span {
-              display: flex;
-              margin: 0 10px;
-              width: 40px;
+              font-size: 14px;
+
+              &.icon-container {
+                flex-shrink: 0;
+                width: 16px;
+                height: 16px;
+                margin-right: 12px;
+                margin-top: 2px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                svg,
+                i {
+                  width: 100%;
+                  height: 100%;
+                  font-size: 14px;
+                }
+              }
+
+              &.text-container {
+                flex: 1;
+                line-height: 1.5;
+                word-wrap: break-word;
+              }
             }
           }
         }
@@ -212,7 +354,6 @@
             font-family: $primary_font;
             font-size: 60px;
           }
-
         }
 
         .image_description {
@@ -221,8 +362,9 @@
           border-radius: 20px;
           position: absolute;
           bottom: 40px;
-          left: 20px;
-          right: 20px;
+          left: 0;
+          right: 0;
+
 
           &.half {
             max-width: 564px;
@@ -235,7 +377,32 @@
             margin: 0;
           }
         }
+
+        // Add padding bottom to prevent button overlap
+        &:has(.btn) {
+          padding-bottom: 80px; // Space for button
+        }
+
+        &:has(.stat) {
+          padding-bottom: 100px; // Space for stat
+        }
+
+        &:has(.image_description) {
+          padding-bottom: 100px; // Space for image description
+        }
       }
+    }
+  }
+
+  // Alternative approach: Use CSS Grid for more control
+  &.use-grid .cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    align-items: stretch;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
     }
   }
 }

@@ -14,12 +14,12 @@ if( !empty($block['align']) ) {
 }
 
 $card = get_field("card");
-//var_dump($card);
+// var_dump($card);
 ?>
 
 
-<section class="<?php echo esc_attr($className); ?>" id="<?php echo esc_attr($id); ?>">
-  <div class="container container--slim">
+<section class="<?php echo esc_attr($className); ?> image-match-text" id="<?php echo esc_attr($id); ?>">
+  <div class="container">
     <?php if($card['alignment'] == "left") :?>
     <div class="row">
       <div class="col-md-6">
@@ -34,8 +34,24 @@ $card = get_field("card");
               <?php endforeach;?>
             </ul>
             <?php endif;?>
-            <?php if($card['call_to_action'] === TRUE):?><a href="<?php echo $card['button_link'];?>"
-              class="btn"><?php echo $card['button_title'];?></a><?php endif;?>
+            <?php if($card['call_to_action'] === TRUE):?>
+              <a href="<?php echo $card['button_link'];?>" class="btn"><?php echo $card['button_title'];?>
+              <?php if($card['button_type'] == 'link'):?>
+                <span class="link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="11.787" height="11.788" viewBox="0 0 11.787 11.788">
+                  <path id="arrow-down-to-line-solid" d="M4.757,8.089a.835.835,0,0,1-1.18,0L.244,4.755a.834.834,0,0,1,1.18-1.18L3.335,5.487V.833A.833.833,0,1,1,5,.833V5.487L6.913,3.576a.834.834,0,0,1,1.18,1.18L4.76,8.089Z" transform="translate(5.895 11.788) rotate(-135)" fill="#fff"/>
+                  </svg>
+                </span>
+                <?php endif;?>
+                <?php if($card['button_type'] == 'download'):?>
+                  <span class="download">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="11.667" viewBox="0 0 10 11.667">
+                  <path id="arrow-down-to-line-solid" d="M.833,43.667A.833.833,0,1,1,.833,42H9.167a.833.833,0,1,1,0,1.667Zm4.755-3.578a.835.835,0,0,1-1.18,0L1.076,36.755a.834.834,0,0,1,1.18-1.18l1.911,1.911V32.833a.833.833,0,1,1,1.667,0v4.654l1.911-1.911a.834.834,0,0,1,1.18,1.18L5.591,40.089Z" transform="translate(0 -32)" fill="#fff"/>
+                  </svg>
+                </span>
+              <?php endif;?>
+              </a>
+            <?php endif;?>
           </div>
         </div>
       </div>

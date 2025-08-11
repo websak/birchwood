@@ -1,0 +1,44 @@
+.card-grid-column {
+  padding-bottom: 75px;
+
+  .inner {
+    .body {
+      h3 {
+        font-size: 28px;
+        font-weight: $font-700;
+        line-height: 35px;
+      }
+
+      .bullet_list {
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+        padding: 20px 0;
+        margin: 0;
+
+        li {
+          color: color(green, darker);
+          display: flex;
+          font-size: 14px;
+          margin-bottom: 15px;
+
+          &:last-child {
+            margin: 0;
+          }
+
+          span {
+            display: flex;
+            margin: 0 10px;
+          }
+        }
+      }
+
+      .description {
+        padding: 20px 0;
+        p {
+          color: color(green,darker);
+        }
+      }
+    }
+  }
+}

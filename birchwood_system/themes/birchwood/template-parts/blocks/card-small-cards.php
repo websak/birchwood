@@ -21,8 +21,7 @@ $card = get_field("card");
 <style>
 .card-small-cards {
   border-radius: 60px;
-  background: <?php echo $card['background_colour_1'];
-  ?>;
+  background: <?php echo $card['background_colour_1'];?>;
   background: linear-gradient(90deg, <?php echo $card['background_colour_1']; ?> 0%, <?php echo $card['background_colour_2']; ?> 100%);
   padding: 100px 0;
 }
@@ -32,8 +31,8 @@ $card = get_field("card");
 
 
 
-<section class="<?php echo esc_attr($className); ?><?php if(basename(get_page_template()) === 'page.php') :?> container container--slim<?php endif;?>" id="<?php echo esc_attr($id); ?>">
-  <div class="container container--slim">
+<section class="<?php echo esc_attr($className); ?><?php if($card['background'] === TRUE) : ?> shape <?php endif;?><?php if(basename(get_page_template()) === 'page.php') :?> container<?php endif;?>" id="<?php echo esc_attr($id); ?>">
+  <div class="container">
     <div class="row">
       <div class="col-md-12">
         <div class="inner">
@@ -82,7 +81,7 @@ $card = get_field("card");
             <?php if($scard['bullet_list'] === TRUE):?>
             <ul class="bullet_list">
               <?php foreach($scard['list'] as $bullet):?>
-              <li><span><img src="<?php echo $bullet['icon']['url'];?>"></span><?php echo $bullet['text'];?></li>
+              <li><span class="icon"><img src="<?php echo $bullet['icon']['url'];?>"></span><span class="text"><?php echo $bullet['text'];?></span></li>
               <?php endforeach;?>
             </ul>
             <?php endif;?>

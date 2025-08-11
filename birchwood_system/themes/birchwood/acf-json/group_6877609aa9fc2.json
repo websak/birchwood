@@ -83,6 +83,32 @@
                     "max_size": "",
                     "mime_types": "",
                     "allow_in_bindings": 0
+                },
+                {
+                    "key": "field_68824ccce6913",
+                    "label": "Button Type",
+                    "name": "button_type",
+                    "aria-label": "",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "download": "Download",
+                        "link": "Link"
+                    },
+                    "default_value": "",
+                    "return_format": "value",
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "allow_in_bindings": 0,
+                    "layout": "vertical",
+                    "save_other_choice": 0
                 }
             ]
         }
@@ -105,5 +131,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1752655920
+    "modified": 1753369856
 }

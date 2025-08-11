@@ -1,0 +1,68 @@
+# Translation of Plugins - Hide Admin Bar Based on User Roles - Stable (latest release) in German
+# This file is distributed under the same license as the Plugins - Hide Admin Bar Based on User Roles - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2022-08-25 17:00:53+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.1\n"
+"Language: de\n"
+"Project-Id-Version: Plugins - Hide Admin Bar Based on User Roles - Stable (latest release)\n"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:308
+msgid "Capabilities Blacklist"
+msgstr "Sperrliste der Berechtigungen"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:163
+msgid "Hide Admin Bar Settings"
+msgstr "Adminleisten-Einstellungen verstecken"
+
+#. Plugin URI of the plugin
+#: hide-admin-bar-based-on-user-roles.php
+msgid "https://wordpress.org/plugins/hide-admin-bar-based-on-user-roles/"
+msgstr "https://wordpress.org/plugins/hide-admin-bar-based-on-user-roles/ (engl.)"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:331
+msgid "You can reset plugin settings by visiting this url without login to admin panel. Keep it safe."
+msgstr "Sie können die Plugin-Einstellungen zurücksetzen, indem Sie diese URL besuchen, ohne sich im Admin-Bereich anzumelden. Sicher aufbewahren."
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:310
+msgid "Hide admin bar for selected user capabilities"
+msgstr "Ausblenden der Admin-Leiste für ausgewählte Benutzerfunktionen"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:261
+msgid "Hide Admin Bar for All Guests Users"
+msgstr "Admin-Leiste für alle Gastbenutzer ausblenden"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:244
+msgid "Hide Admin Bar for All Users"
+msgstr "Admin-Leiste für alle Benutzer ausblenden"
+
+#. Author of the plugin
+#: hide-admin-bar-based-on-user-roles.php
+msgid "Ankit Panchal"
+msgstr "Ankit Panchal"
+
+#. Description of the plugin
+#: hide-admin-bar-based-on-user-roles.php
+msgid "This plugin is very useful to hide admin bar based on selected user roles and user capabilities."
+msgstr "Dieses Plugin ist sehr nützlich, um die Admin-Leiste basierend auf ausgewählten Benutzerrollen und Benutzerfunktionen auszublenden."
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:327
+msgid "Save Changes"
+msgstr "Änderungen speichern"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:279
+msgid "Hide admin bar for selected user roles."
+msgstr "Admin-Leiste für ausgewählte Benutzerrollen ausblenden."
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:278
+msgid "User Roles"
+msgstr "Benutzerrollen"
+
+#. Plugin Name of the plugin
+#: hide-admin-bar-based-on-user-roles.php
+msgid "Hide Admin Bar Based on User Roles"
+msgstr "Hide Admin Bar Based on User Roles"

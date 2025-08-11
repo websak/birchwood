@@ -18,7 +18,7 @@ $card = get_field("card");
 ?>
 
 <section class="<?php echo esc_attr($className); ?>" id="<?php echo esc_attr($id); ?>">
-  <div class="container container--slim">
+  <div class="container">
     <div class="row">
       <div class="col-md-12">
         <div class="inner">
@@ -37,7 +37,7 @@ $card = get_field("card");
 				<?php endif;?>
       </div>
     </div>
-    <div class="row">
+    <div class="row grid">
       <?php if($card['grid']):?>
 				<?php foreach($card['grid'] as $grid):?>
 				<div class="col-md-3 scard">
@@ -46,7 +46,7 @@ $card = get_field("card");
 							<div class="icon-container">
 								<img src="<?php echo $grid['icon']['url'];?>">
 							</div>
-							<h3><?php echo $grid['title'];?></h3>
+							<h3 <?php if($grid['colour']):?>style="color:<?php echo $grid['colour'];?>"<?php endif;?>><?php echo $grid['title'];?></h3>
 							<?php echo $grid['text'];?>
 						</div>
 					</div>

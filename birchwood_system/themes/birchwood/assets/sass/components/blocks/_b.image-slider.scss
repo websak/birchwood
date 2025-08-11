@@ -1,26 +1,43 @@
 .card-image-slider {
+  position: relative; // Crucial: Makes this the positioning context for absolute children
+
   .image_carousel {
     position: relative;
+    margin: 20px 0;
 
     .image-container {
+      height: 850px; // Adjust this value to your preferred height
+      overflow: hidden;
+      position: relative;
+
       img {
-        border-bottom-right-radius: 70px;
-        border-bottom-left-radius: 70px;
-        border-top-left-radius: 70px;
-        border-top-right-radius: 70px;
+        border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
         width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
       }
 
       .block {
         position: absolute;
         background-color: color(white);
         padding: 25px 25px 50px 25px;
-        bottom: 30%;
+        bottom: 10%;
         border-radius: 20px;
+        // The margin-left will define the 'x' position for the buttons too
         margin-left: 30px;
         display: flex;
         max-width: 790px;
-        width: 100%;
+        width: 100%; // Important for width calculation if you use right/left
+
+        opacity: 0;
+        transition: opacity 1.5s ease-in-out;
 
         .col {
           display: flex;
@@ -34,27 +51,37 @@
           margin: 0;
         }
 
-        p {
-          &:last-child {
-            margin-bottom: 0;
-          }
-
-        }
+        // p {
+        //   &:last-child {
+        //     margin-bottom: 0;
+        //   }
+        // }
 
         .desc {
           padding-top: 15px;
         }
       }
     }
+
+    .slick-current {
+
+      img,
+      .block {
+        opacity: 1;
+      }
+    }
   }
 
-  /* Custom Navigation Arrows */
+  /* Custom Navigation Arrows - POSITIONED RELATIVE TO .card-image-slider */
   .slick-navigation {
     position: absolute;
-    bottom: 20px;
+    bottom: calc(9% + 20px);
+    /* Roughly aligns with the bottom of the block, plus some spacing */
+    left: calc(30px + 28px);
+    /* Aligns with the left edge of the block + its padding */
     display: flex;
     gap: 10px;
-    z-index: 10;
+    z-index: 20; // Ensure it's above other content if necessary
   }
 
   .slick-prev-custom,
@@ -76,20 +103,42 @@
     background: rgba(color(green), 0.5);
     transform: scale(1.1);
   }
-
 }
 
 .home {
   .image_carousel {
     margin-top: -70px;
-    margin-bottom: -70px;
+
     .image-container {
       img {
         border-bottom-right-radius: 70px;
         border-bottom-left-radius: 70px;
         border-top-left-radius: 0;
         border-top-right-radius: 0;
-        width: 100%;
+      }
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .card-image-slider {
+    .image_carousel {
+      .image-container {
+        height: 300px; // Smaller height on mobile
+      }
+    }
+
+    .slick-navigation {
+      bottom: 20px; // Adjust for smaller mobile height
+      left: 20px; // Adjust for smaller mobile margins
+    }
+  }
+
+  .home {
+    .image_carousel {
+      .image-container {
+        height: 350px; // Adjusted for mobile home page
       }
     }
   }

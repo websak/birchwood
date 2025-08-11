@@ -1,151 +1,153 @@
 .card-overlapping-cards {
-  height: 400vh;
+  // height: 400vh;
   position: relative;
-  
-  
-  .container {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+  #cards {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    /* grid-template-rows: repeat(var(--numcards), var(--card-height)); */
+    gap: var(--card-margin);
+    padding-bottom: calc(var(--numcards) * var(--card-top-offset));
+    margin-bottom: -35vh;
+    /* Add padding to create space before sticking starts */
+    padding-top: 35vh;
   }
 
-  .cards {
-    position: relative;
-    width: 100%;
-    height: 600px;
-    margin: 0 auto;
+  #card-1 {
+    --index: 1;
+    --card-top-offset: 3em;
+  }
 
-    .cards-wrapper {
-      position: relative;
-      width: 100%;
-      height: 100%;
+  #card-2 {
+    --index: 2;
+    --card-top-offset: 3em;
+  }
 
-      .custom-card {
-        position: absolute;
+  #card-3 {
+    --index: 3;
+    --card-top-offset: 1em;
+  }
+
+  #card-4 {
+    --index: 4;
+    --card-top-offset: 1em;
+
+  }
+
+  .card {
+    position: sticky;
+    top: 50vh;
+    transform: translateY(-43%);
+    padding-top: calc(var(--index) * var(--card-top-offset));
+    background: none;
+    border: none;
+  }
+
+  .card-content {
+    background: color(white);
+    color: #131212;
+    border-radius: 50px;
+    overflow: hidden;
+    display: grid;
+    grid-template-areas: "text img";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    align-items: stretch;
+    padding: 80px;
+    transform-origin: 50% 0%;
+    will-change: transform;
+    .btn {
+      max-width: 200px;
+    }
+    >div {
+      padding-right: 50px;
+    }
+
+    h2,
+    p {
+      color: color(white);
+    }
+
+    &.dark {
+
+      h2,
+      p {
+        color: color(green, darker);
+      }
+
+      .bullet_list {
+        li {
+          color: color(green, darker);
+        }
+      }
+
+      .btn {
+        background-color: color(green, darker);
+        color: color(green);
+
+        span {
+          background-color: color(green);
+        }
+      }
+    }
+
+    &.light {
+      .btn {
+        span {
+          background-color: color(green, darker);
+        }
+      }
+    }
+
+    >figure {
+      grid-area: img;
+      overflow: hidden;
+
+      >img {
         width: 100%;
-        top: 0px;
-        height: 600px;
-        background-color: grey;
-        background-position: center;
-        background-size: cover;
-        color: #fff;
-        margin-bottom: 50px;
+        height: 100%;
+        object-fit: contain;
+        border-radius: .4em;
+      }
+    }
+
+    .bullet_list {
+      display: flex;
+      flex-direction: column;
+      list-style-type: none;
+      padding: 20px 0 30px 0;
+      margin: 0;
+
+      &.two-column {
+        display: block;
+        column-count: 2;
+
+        li {
+          &:last-child {
+            margin-bottom: 10px;
+          }
+        }
+      }
+
+      li {
+        color: color(white);
         display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
-        border-radius: 70px;
-        padding: 50px;
+        font-size: 14px;
+        margin-bottom: 25px;
 
-        .card-image {
-          height: 450px;
-          border-radius: 20px;
-          background-size: cover;
-          background-position: center;
+        strong {
+          padding-right: 5px;
         }
 
-        .btn {
-          max-width: 180px;
+        &:last-child {
+          margin: 0;
         }
 
-        .inner {
-          &.dark {
-
-            h2,
-            p {
-              color: color(green, darker);
-            }
-
-            .bullet_list {
-              li {
-                color: color(green, darker);
-              }
-            }
-
-            .btn {
-              background-color: color(green, darker);
-              color: color(green);
-
-              &:after {
-                background-color: color(green);
-              }
-
-              &:hover {
-                background: none;
-                border: 1px solid color(green, darker);
-                color: color(green, darker);
-
-                &:after {
-                  background-color: color(green, darker);
-                }
-              }
-            }
-
-          }
-
-          p {
-            color: color(white);
-          }
-
-          .bullet_list {
-            display: flex;
-            flex-direction: column;
-            list-style-type: none;
-            padding: 0 0 20px 0;
-            margin: 0;
-
-            &.two-column {
-              display: block;
-              column-count: 2;
-
-              li {
-                &:last-child {
-                  margin-bottom: 10px;
-                }
-              }
-            }
-
-            li {
-              color: color(white);
-              display: flex;
-              font-size: 14px;
-              margin-bottom: 25px;
-
-              &:last-child {
-                margin: 0;
-              }
-
-              span {
-                display: flex;
-                margin: 0 10px;
-                width: 40px;
-              }
-            }
-          }
-
-          h2 {
-            font-size: 35px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: color(white);
-            line-height: 44px
-          }
-
-          p {
-            font-size: 14px;
-            line-height: 22px;
-            margin-bottom: 20px;
-            color: color(white);
-          }
-
-          ul {
-            li {
-              font-size: 14px;
-              color: color(white);
-              line-height: 22px;
-            }
-          }
+        span {
+          display: flex;
+          margin: 0 10px;
+          width: 21px;
         }
       }
     }
@@ -153,63 +155,57 @@
 
 
 
-  .opacity {
-    -moz-transition: 0.4s ease;
-    -ms-transition: 0.4s ease;
-    -o-transition: 0.4s ease;
-    transition: 0.4s ease;
-    -webkit-transition: 0.4s ease;
-    opacity: 0.6;
+  /* Fallback animation using JavaScript intersection observer */
+  .card-content {
+    transition: transform 0.3s ease-out;
   }
 
-  .scale {
-    -moz-transition: 0.4s ease;
-    -ms-transition: 0.4s ease;
-    -o-transition: 0.4s ease;
-    transition: 0.4s ease;
-    -webkit-transition: 0.4s ease;
-    width: 95%;
+  .card.stacked .card-content {
+    transform: scale(var(--scale, 1));
   }
 
+  /* Responsive */
+  @media (max-width: 768px) {
+    :root {
+      --card-height: 800px;
+      --card-margin: 6vw;
+    }
 
+    header,
+    main {
+      width: 90vw;
+    }
 
+    .card-content {
+      grid-template-areas:
+        "img"
+        "text";
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+    }
+  }
 
+  /* CSS Scroll Timeline Animation (for modern browsers) */
+  @supports (animation-timeline: scroll()) {
+    @keyframes scale {
+      to {
+        transform: scale(calc(1.1 - calc(0.1 * var(--reverse-index))));
+      }
+    }
 
-  /* Responsive adjustments */
-  //   @media (max-width: 768px) {
-  //     .slide_title h2 {
-  //       font-size: 48px;
-  //       line-height: 60px;
-  //     }
+    .card {
+      --index0: calc(var(--index) - 1);
+      --reverse-index: calc(var(--numcards) - var(--index0));
+      //--reverse-index0: calc(var(--reverse-index) - 1);
+    }
 
-  //     .slide_para {
-  //       width: 100%;
-  //       max-width: 400px;
-  //     }
-
-  //     .slide_para p {
-  //       font-size: 16px;
-  //     }
-
-  //     .slider_content {
-  //       padding: 0 20px;
-  //     }
-
-  //     .empty {
-  //       font-size: 50px;
-  //     }
-  //   }
-
-  //   @media (max-width: 480px) {
-  //     .slide_title h2 {
-  //       font-size: 36px;
-  //       line-height: 45px;
-  //     }
-
-  //     .slide_para p {
-  //       font-size: 14px;
-  //       line-height: 20px;
-  //     }
-  //   }
+    .card-content {
+      --duration: calc(var(--reverse-index0) * 1s);
+      --delay: calc(var(--index0) * 1s);
+      animation: var(--duration) linear scale var(--delay) forwards;
+      animation-timeline: scroll(root);
+      animation-range: entry 0% entry 100%;
+    }
+  }
 
 }

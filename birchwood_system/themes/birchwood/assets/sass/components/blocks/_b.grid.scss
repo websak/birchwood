@@ -1,10 +1,14 @@
 .card-grid {
-  padding: 75px 0;
+  padding: 75px 0 75px 0;
 
   .image-container {
     padding-bottom: 30px;
   }
-
+  .row {
+    &.grid {
+      margin-left: -40px;
+    }
+  }
   .inner {
     .body {
       h2 {
@@ -24,13 +28,17 @@
     margin: 20px 0;
 
     .inner {
+      display: flex;
+      height: 100%;
+      
       .body {
-        padding-right: 20px;
+        padding-right: 40px;
+        padding-left: 40px;
         border-right: 1px solid color(green);
       }
 
       h3 {
-        color: color(green,darker);
+        color: color(green, darker);
         font-size: 18px;
         line-height: 24px;
       }
@@ -60,3 +68,9 @@
     }
   }
 }
+
+// .home {
+//   .card-grid:nth-child(1) {
+//     padding-top: 0;
+//   }
+// }

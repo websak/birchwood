@@ -35,12 +35,12 @@ $categories = get_terms(array(
 ?>
 
 <section class="<?php echo esc_attr($className); ?>" id="<?php echo esc_attr($id); ?>">
-	<div class="container container--slim">
+	<div class="container">
 		<div class="row">
-			<div class="col-md-6">
+			<div class="col-md-5">
 				<?php if($card['title']) :?><h2><?php echo $card['title'];?></h2><?php endif;?>
 			</div>
-			<div class="col-md-6">
+			<div class="col-md-7">
 				<!-- Filter Tabs -->
 				<?php if (!empty($categories)) : ?>
 					<div class="team-filter-tabs">

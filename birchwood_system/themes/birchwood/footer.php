@@ -2,7 +2,7 @@
 
 
 <footer class="c-footer">
-  <div class="container container--slim">
+  <div class="container">
     <div class="row">
       <div class="col-md-12">
         <?php $content = get_field('disclaimer', 'option'); $logo = get_field('logo', 'option'); $flogo = get_field('footer_logo', 'option');?>

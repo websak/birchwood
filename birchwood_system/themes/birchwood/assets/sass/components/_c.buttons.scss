@@ -1,30 +1,180 @@
 .btn {
-  border-radius: 20px;
+  border-radius: 80px;
   background-color: color(green);
   color: color(green, darker);
-  padding: 12px 20px;
-  max-width: 138px;
+  padding: 15px; // Extra right padding for arrow
+  min-width: 100px; // Minimum button width
+  max-width: 240px; // Maximum button width (increased)
   font-size: 12px;
   font-weight: $font-400;
   position: relative;
   display: flex;
   align-items: center;
-  &:after {
-    content: '';
+  word-wrap: break-word;
+  text-align: left;
+  line-height: 1.2;
+
+  span {
     height: 30px;
     width: 30px;
-    position: absolute;
-    background: color(green,darker) url('../images/icons/arrow-down.svg');
-    background-repeat: no-repeat;
-    background-position: 50%;
+    background-color: color(green, darker);
     border-radius: 100%;
+    position: absolute;
     right: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; // Important for the animation effect
+
+    &.link {
+      svg {
+        transition: transform 0.3s ease;
+        width: 12px;
+        height: 12px;
+      }
+    }
+
+    &.download {
+      svg {
+        transition: transform 0.3s ease;
+        width: 12px;
+        height: 12px;
+      }
+    }
   }
+
+  // Fixed hover selector - moved outside and targets the button, not the span
   &:hover {
-    background-color: color(green,darker);
-    color: color(white);
-    &:after {
-      background-color: color(green);
+    background-color: color(green);
+
+
+    span.link {
+      height: 32px;
+      width: 32px;
+
+      svg {
+        animation: svgFlowAnimation 0.2s ease-in-out forwards;
+      }
+    }
+
+    span.download {
+      height: 32px;
+      width: 32px;
+
+      svg {
+        animation: svgDownloadAnimation 0.2s ease-in-out forwards;
+      }
     }
   }
 }
+
+// Quick keyframe animation for SVG flow effect (link class)
+@keyframes svgFlowAnimation {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+
+  35% {
+    transform: translate(8px, -8px);
+    opacity: 0;
+  }
+
+  65% {
+    transform: translate(-8px, 8px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+// Download animation - goes down and reappears from top
+@keyframes svgDownloadAnimation {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  35% {
+    transform: translateY(12px);
+    opacity: 0;
+  }
+
+  65% {
+    transform: translateY(-12px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+// Alternative quick bouncy version for link (optional)
+@keyframes svgFlowBounce {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+
+  25% {
+    transform: translate(10px, -10px) scale(0.8);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translate(-10px, 10px) scale(0.8);
+    opacity: 0;
+  }
+
+  75% {
+    transform: translate(-2px, 2px) scale(1.1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+}
+
+// Alternative bouncy version for download (optional)
+@keyframes svgDownloadBounce {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+
+  25% {
+    transform: translateY(15px) scale(0.8);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateY(-15px) scale(0.8);
+    opacity: 0;
+  }
+
+  75% {
+    transform: translateY(-2px) scale(1.1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+// To use the bouncy versions instead:
+// .btn:hover span.link svg {
+//   animation: svgFlowBounce 0.8s ease-in-out forwards;
+// }
+// .btn:hover span.download svg {
+//   animation: svgDownloadBounce 0.8s ease-in-out forwards;
+// }

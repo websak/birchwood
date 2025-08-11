@@ -6,8 +6,8 @@ $grid-padding: 15px;
 $xs: 599px;
 $sm: 768px;
 $md: 1024px;
-$lg: 1100px;
-$xl: 1266px;
+$lg: 1300px;
+$xl: 1400px;
 
 //container widths
 
@@ -72,6 +72,10 @@ $breakpoints-spacing: (xs: $grid-padding,
     margin-left: 0;
     margin-right: 0;
   }
+}
+
+.container--slim {
+  max-width: 1266px;
 }
 
 // @media (max-width: $md - 1px) {

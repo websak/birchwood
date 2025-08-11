@@ -395,6 +395,51 @@
                             "parent_repeater": "field_68750ce2b6045"
                         },
                         {
+                            "key": "field_6880e476f408e",
+                            "label": "Image Min Height",
+                            "name": "image_min_height",
+                            "aria-label": "",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_68750ce2c4db4",
+                                        "operator": "==",
+                                        "value": "full"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "100": "100px",
+                                "200": "200px",
+                                "300": "300px",
+                                "400": "400px",
+                                "500": "500px",
+                                "600": "600px",
+                                "700": "700px",
+                                "800": "800px",
+                                "900": "900px"
+                            },
+                            "default_value": false,
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "allow_in_bindings": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "create_options": 0,
+                            "save_options": 0,
+                            "parent_repeater": "field_68750ce2b6045"
+                        },
+                        {
                             "key": "field_68750ce2c4dbf",
                             "label": "Statistic",
                             "name": "statistic",
@@ -631,6 +676,33 @@
                             "prepend": "",
                             "append": "",
                             "parent_repeater": "field_68750ce2b6045"
+                        },
+                        {
+                            "key": "field_68822ded86c0d",
+                            "label": "Button Type",
+                            "name": "button_type",
+                            "aria-label": "",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "download": "Download",
+                                "link": "Link"
+                            },
+                            "default_value": "",
+                            "return_format": "value",
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "allow_in_bindings": 0,
+                            "layout": "vertical",
+                            "save_other_choice": 0,
+                            "parent_repeater": "field_68750ce2b6045"
                         }
                     ]
                 }
@@ -655,5 +727,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1752568754
+    "modified": 1753361973
 }

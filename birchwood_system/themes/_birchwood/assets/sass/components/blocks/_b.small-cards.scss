@@ -1,0 +1,280 @@
+.card-small-cards {
+  position: relative;
+  z-index: 1;
+
+  .inner {
+    .body {
+      h2 {
+        color: color(green);
+        font-size: 35px;
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  .scard {
+    background-color: color(green, darker);
+    border-radius: 20px;
+    padding: 20px;
+    margin: 10px;
+    min-height: 445px;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    border: none;
+
+    &.full {
+      background-size: cover;
+    }
+
+    &.contained {
+      background-size: contain;
+      background-position: bottom;
+    }
+
+    .inner {
+      display: flex;
+
+      .body {
+        &.light {
+          .title_tag {
+            background-color: color(green, darker);
+            color: color(green);
+          }
+
+          h4 {
+            color: color(green, darker);
+          }
+
+          .bullet_list {
+            li {
+              color: color(green, darker);
+            }
+          }
+
+          .btn {
+            background-color: color(green, darker);
+            color: color(green);
+
+            &:after {
+              background-color: color(green);
+            }
+          }
+        }
+
+        &.dark {
+          .title_tag {
+            background-color: color(green);
+            color: color(green, darker);
+          }
+
+          h4 {
+            color: color(green);
+          }
+
+          .bullet_list {
+            li {
+              color: color(white);
+            }
+          }
+
+          .stat {
+            span {
+              color: color(green);
+            }
+          }
+
+          .description {
+            p {
+              color: color(white);
+            }
+          }
+
+          .btn {
+            background-color: color(green);
+            color: color(green, darker);
+
+            &:after {
+              background-color: color(green, darker);
+            }
+          }
+        }
+
+        .title_tag {
+          background-color: color(white);
+          border-radius: 30px;
+          padding: 10px 15px;
+          display: inline-block; // Makes it size to content
+          width: fit-content; // Modern browsers - sizes exactly to content
+          max-width: 100%; // Prevents overflow
+          word-wrap: break-word; // Handles long words
+          text-align: center; // Centers text within the tag
+
+          // Alternative approach for older browser support:
+          // width: auto;
+          // min-width: max-content;
+
+          h3 {
+            font-size: 12px;
+            line-height: 22px;
+            margin: 0;
+            font-weight: $font-400;
+            white-space: nowrap; // Keeps text on one line (remove if you want wrapping)
+            overflow: hidden;
+            text-overflow: ellipsis; // Adds ... for very long text
+            max-width: 200px; // Adjust based on your design needs
+          }
+        }
+
+        // Alternative multi-line version if you need text wrapping:
+        .title_tag.multiline {
+          h3 {
+            white-space: normal; // Allows text wrapping
+            overflow: visible;
+            text-overflow: clip;
+            max-width: none;
+            line-height: 1.4; // Better spacing for multi-line
+          }
+        }
+
+        h4 {
+          font-size: 18px;
+          line-height: 24px;
+          margin: 15px 5px;
+        }
+
+        .inner_image {
+          position: absolute;
+          bottom: 20px;
+          left: 0;
+          right: 0;
+          margin: 0 auto;
+        }
+
+        .description {
+          padding: 15px 0;
+
+          p {
+            font-weight: $font-400;
+            font-size: 14px;
+            line-height: 22px;
+          }
+        }
+
+        .bullet_list {
+          display: flex;
+          flex-direction: column;
+          list-style: none; // Removes all list styling
+          list-style-type: none; // Extra specificity for older browsers
+          padding: 20px 0;
+          padding-left: 0; // Removes default list padding
+          margin: 0;
+          margin-left: 0; // Removes default list margin
+
+          li {
+            color: color(white);
+            display: flex;
+            align-items: flex-start; // Aligns items to top for multi-line text
+            font-size: 14px;
+            line-height: 1.5; // Better line spacing
+            margin-bottom: 15px;
+            list-style: none; // Individual li styling removal
+            padding-left: 0; // Remove any li padding
+
+            &:last-child {
+              margin: 0;
+            }
+
+            &::before {
+              display: none; // Removes any pseudo-element bullets
+            }
+
+            // Icon/bullet container
+            .icon,
+            .bullet {
+              flex-shrink: 0; // Prevents icon from shrinking
+              width: 16px; // Fixed width for consistency
+              height: 16px; // Fixed height for consistency
+              margin-right: 12px; // Space between icon and text
+              margin-top: 2px; // Slight offset to align with first line of text
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              // If using SVG icons
+              svg {
+                width: 100%;
+                height: 100%;
+                fill: currentColor; // Uses the li color
+              }
+
+              // If using font icons
+              i {
+                font-size: 14px;
+                line-height: 1;
+              }
+
+              // If using bullet points
+              &:before {
+                content: "";
+                font-size: 16px;
+                line-height: 1;
+              }
+            }
+
+            // Text content
+            .text,
+            span:not(.icon):not(.bullet) {
+              flex: 1; // Takes remaining space
+              line-height: 1.5;
+              word-wrap: break-word;
+              hyphens: auto; // Better word breaking
+            }
+
+            // Alternative structure if you're using nested spans
+            span {
+              font-size: 14px;
+              &.icon-container {
+                flex-shrink: 0;
+                width: 16px;
+                height: 16px;
+                margin-right: 12px;
+                margin-top: 2px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                svg,
+                i {
+                  width: 100%;
+                  height: 100%;
+                  font-size: 14px;
+                }
+              }
+
+              &.text-container {
+                flex: 1;
+                line-height: 1.5;
+                word-wrap: break-word;
+              }
+            }
+          }
+        }
+
+        .stat {
+          padding: 20px 0;
+          position: absolute;
+          bottom: 0;
+          right: 20px;
+
+          span {
+            color: color(green, darker);
+            font-weight: $font-800;
+            font-family: $primary_font;
+            font-size: 60px;
+          }
+        }
+      }
+    }
+  }
+}

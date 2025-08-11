@@ -1,13 +1,24 @@
 .c-footer {
   background: color(green, dark);
   background: linear-gradient(90deg, rgba(color(green, darker), 1) 0%, rgba(color(green, dark), 1) 100%, rgba(color(green, dark), 1) 100%);
-  padding: 70px 0 70px 0;
+  padding: 70px 0 40px 0;
   border-top-left-radius: 70px;
   border-top-right-radius: 70px;
-  // position: absolute;
-  // left: 0;
-  // right: 0;
-  // bottom: 0;
+  margin-top: 100px;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    background-image: url('../images/shape.svg');
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    left: -25px;
+    right: 0;
+    height: 100%;
+    z-index: 2;
+    top: 0;
+  }
 
   h3,
   p,
@@ -24,11 +35,12 @@
   p {
     font-size: 10px;
     line-height: 15px;
-    font-weight: $font-300;   
+    font-weight: $font-300;
   }
 
   ol {
     padding-left: 10px;
+
     li {
       font-size: 10px;
       line-height: 15px;
@@ -59,10 +71,11 @@
     }
   }
 
-  p {    
+  p {
     &.logo {
       display: flex;
       justify-content: flex-end;
+
       img {
         margin-right: 20px;
       }

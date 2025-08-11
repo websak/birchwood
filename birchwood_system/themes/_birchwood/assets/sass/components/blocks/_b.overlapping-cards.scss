@@ -1,0 +1,240 @@
+.card-overlapping-cards {
+  height: 400vh;
+  position: relative;
+
+
+  .container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cards {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    margin: 0 auto;
+
+    .cards-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+
+      .custom-card {
+        position: absolute;
+        width: 100%;
+        top: 0px;
+        height: 600px;
+        background-color: grey;
+        background-position: center;
+        background-size: cover;
+        color: #fff;
+        margin-bottom: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
+        border-radius: 50px;
+        padding: 50px;
+
+        .card-image {
+          height: 450px;
+          border-radius: 20px;
+          background-size: cover;
+          background-position: center;
+        }
+
+        .btn {
+          /* Remove fixed max-width to allow button to size based on content */
+          min-width: 120px;
+          /* Set minimum width instead */
+          width: auto;
+          /* Allow width to adjust to content */
+          padding: 12px 24px;
+          /* Add consistent padding */
+          display: inline-block;
+          text-align: center;
+          white-space: nowrap;
+          /* Prevent text wrapping */
+        }
+
+        .inner {
+          &.dark {
+
+            h2,
+            p {
+              color: color(green, darker);
+            }
+
+            .bullet_list {
+              li {
+                color: color(green, darker);
+              }
+            }
+
+            .btn {
+              background-color: color(green, darker);
+              color: color(green);
+
+              &:after {
+                background-color: color(green);
+              }
+
+              &:hover {
+                background: none;
+                border: 1px solid color(green, darker);
+                color: color(green, darker);
+
+                &:after {
+                  background-color: color(green, darker);
+                }
+              }
+            }
+
+          }
+
+          p {
+            color: color(white);
+          }
+
+          .bullet_list {
+            display: flex;
+            flex-direction: column;
+            list-style-type: none;
+            padding: 0 0 20px 0;
+            margin: 0;
+
+            &.two-column {
+              display: block;
+              column-count: 2;
+
+              li {
+                &:last-child {
+                  margin-bottom: 10px;
+                }
+              }
+            }
+
+            li {
+              color: color(white);
+              display: flex;
+              align-items: flex-start;
+              /* Align items to top for better icon alignment */
+              font-size: 14px;
+
+              &:last-child {
+                margin: 0;
+              }
+
+              strong {
+                margin-right: 5px;
+              }
+
+              span {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 10px;
+                width: 24px;
+                /* Fixed width for consistent spacing */
+                height: 24px;
+                /* Fixed height for consistent icon container */
+                flex-shrink: 0;
+                /* Prevent the icon container from shrinking */
+
+                img {
+                  max-width: 20px;
+                  /* Consistent maximum icon size */
+                  max-height: 20px;
+                  /* Consistent maximum icon size */
+                  width: auto;
+                  height: auto;
+                  object-fit: contain;
+                  /* Maintain aspect ratio while fitting within bounds */
+                }
+              }
+            }
+          }
+
+          h2 {
+            font-size: 35px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: color(white);
+            line-height: 44px
+          }
+
+          p {
+            font-size: 14px;
+            line-height: 22px;
+            margin-bottom: 20px;
+            color: color(white);
+          }
+
+          ul {
+            li {
+              font-size: 14px;
+              color: color(white);
+              line-height: 22px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .opacity {
+    -moz-transition: 0.4s ease;
+    -ms-transition: 0.4s ease;
+    -o-transition: 0.4s ease;
+    transition: 0.4s ease;
+    -webkit-transition: 0.4s ease;
+    opacity: 0.6;
+  }
+
+  .scale {
+    -moz-transition: 0.4s ease;
+    -ms-transition: 0.4s ease;
+    -o-transition: 0.4s ease;
+    transition: 0.4s ease;
+    -webkit-transition: 0.4s ease;
+    width: 95%;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .cards {
+      .cards-wrapper {
+        .custom-card {
+          .btn {
+            min-width: 100px;
+            /* Smaller minimum width on mobile */
+            padding: 10px 20px;
+            /* Adjust padding for mobile */
+          }
+
+          .inner {
+            .bullet_list {
+              li {
+                span {
+                  width: 20px;
+                  /* Slightly smaller icon container on mobile */
+                  height: 20px;
+                  margin: 0 8px;
+                  /* Reduce margin on mobile */
+
+                  img {
+                    max-width: 16px;
+                    /* Smaller icons on mobile */
+                    max-height: 16px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

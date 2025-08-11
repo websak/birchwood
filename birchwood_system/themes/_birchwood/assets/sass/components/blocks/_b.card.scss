@@ -1,0 +1,410 @@
+.card-block {
+  position: relative;
+  z-index: 1;
+
+  .inner {
+    .body {
+      h2 {
+        color: color(green);
+        font-size: 35px;
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  // Container for cards to ensure equal heights
+  .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: stretch; // Makes all cards same height
+
+    // For responsive layouts
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+
+  .card {
+    border-radius: 20px;
+    padding: 40px 20px;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: none;
+    flex: 1; // Makes cards equal width in flex container
+
+    // Remove conflicting height constraints
+    min-height: unset; // Let flexbox handle height
+    margin: 20px 0; // Remove margin that could interfere with flex layout
+
+    &.full {
+      background-size: cover;
+      background-position: center;
+      background-attachment: scroll;
+      // min-height: 900px;
+      // Alternative: if you want to show the full image without cropping
+      &.show-full-image {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+
+    &.contained {
+      background-size: contain;
+      background-position: bottom;
+    }
+
+    .inner {
+      display: flex;
+      flex-direction: column;
+      flex: 1; // Takes all available space in the card
+      height: 100%; // Ensure inner takes full card height
+
+      .body {
+        flex: 1; // Takes available space
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        min-height: 0; // Allow flex item to shrink below content size
+
+        // Content area that grows to fill available space
+        .content-area {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          min-height: 0;
+        }
+
+        // Fixed positioned elements for buttons
+        .btn {
+          position: absolute;
+          left: 20px;
+          right: 20px;
+          bottom: 20px;
+          width: auto;
+        }
+
+        &.light {
+          .title_tag {
+            background-color: color(green, darker);
+            color: color(green);
+          }
+
+          h4 {
+            color: color(green, darker);
+          }
+
+          .bullet_list {
+            li {
+              color: color(green, darker);
+            }
+          }
+
+          .btn {
+            background-color: color(green, darker);
+            color: color(green);
+
+            &:hover {
+              background: none;
+              border: 1px solid color(green, darker);
+              color: color(green, darker);
+
+              &:after {
+                background-color: color(green, darker);
+              }
+            }
+
+            &:after {
+              background-color: color(green);
+            }
+          }
+        }
+
+        &.dark {
+          .title_tag {
+            background-color: color(green);
+            color: color(green, darker);
+          }
+
+          h4 {
+            color: color(green);
+          }
+
+          .bullet_list {
+            li {
+              color: color(white);
+            }
+          }
+
+          .stat {
+            span {
+              color: color(green);
+            }
+          }
+
+          .description {
+            p {
+              color: color(white);
+            }
+          }
+
+          .btn {
+            background-color: color(green);
+            color: color(green, darker);
+
+            &:hover {
+              background: none;
+              border: 1px solid color(green);
+              color: color(white);
+
+              &:after {
+                background-color: color(green);
+              }
+            }
+
+            &:after {
+              background-color: color(green, darker);
+            }
+          }
+        }
+
+        .title_tag {
+          background-color: color(white);
+          border-radius: 30px;
+          padding: 10px 15px;
+          display: inline-block;
+          width: fit-content;
+          max-width: calc(100% - 40px);
+          word-wrap: break-word;
+          text-align: center;
+          flex-shrink: 0; // Prevent shrinking
+
+          h3 {
+            font-size: 12px;
+            line-height: 22px;
+            margin: 0;
+            font-weight: $font-400;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+
+        .title_tag.multiline {
+          h3 {
+            white-space: normal;
+            overflow: visible;
+            text-overflow: clip;
+            line-height: 1.4;
+          }
+        }
+
+        h4 {
+          font-size: 18px;
+          line-height: 24px;
+          margin: 15px 5px;
+          flex-shrink: 0; // Prevent shrinking
+        }
+
+        .inner_image {
+          margin: 20px 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex: 1; // Takes remaining available space
+          min-height: 100px; // Minimum height
+          overflow: hidden;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+          }
+
+          &.contain {
+            img {
+              object-fit: contain;
+            }
+          }
+
+          &.fill {
+            img {
+              object-fit: fill;
+            }
+          }
+        }
+
+        .description {
+          padding: 15px 5px;
+          flex-shrink: 0; // Prevent shrinking
+
+          p {
+            font-weight: $font-400;
+            font-size: 14px;
+            line-height: 22px;
+          }
+        }
+
+        .bullet_list {
+          display: flex;
+          flex-direction: column;
+          list-style: none;
+          list-style-type: none;
+          padding: 20px 0;
+          padding-left: 0;
+          margin: 0;
+          margin-left: 0;
+          flex-shrink: 0; // Prevent shrinking
+
+          li {
+            color: color(white);
+            display: flex;
+            align-items: flex-start;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            list-style: none;
+            padding-left: 0;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+
+            &::before {
+              display: none;
+            }
+
+            .icon,
+            .bullet {
+              flex-shrink: 0;
+              width: 16px;
+              height: 16px;
+              margin-right: 12px;
+              margin-top: 2px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              svg {
+                width: 100%;
+                height: 100%;
+                fill: currentColor;
+              }
+
+              i {
+                font-size: 14px;
+                line-height: 1;
+              }
+
+              &:before {
+                content: "";
+                font-size: 16px;
+                line-height: 1;
+              }
+            }
+
+            .text,
+            span:not(.icon):not(.bullet) {
+              flex: 1;
+              line-height: 1.5;
+              word-wrap: break-word;
+              hyphens: auto;
+            }
+
+            span {
+              font-size: 14px;
+
+              &.icon-container {
+                flex-shrink: 0;
+                width: 16px;
+                height: 16px;
+                margin-right: 12px;
+                margin-top: 2px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                svg,
+                i {
+                  width: 100%;
+                  height: 100%;
+                  font-size: 14px;
+                }
+              }
+
+              &.text-container {
+                flex: 1;
+                line-height: 1.5;
+                word-wrap: break-word;
+              }
+            }
+          }
+        }
+
+        .stat {
+          padding: 20px 0;
+          position: absolute;
+          bottom: 20px;
+          right: 20px;
+
+          span {
+            color: color(green, darker);
+            font-weight: $font-800;
+            font-family: $primary_font;
+            font-size: 60px;
+          }
+        }
+
+        .image_description {
+          background-color: color(white);
+          padding: 20px;
+          border-radius: 20px;
+          position: absolute;
+          bottom: 40px;
+          left: 20px;
+          right: 20px;
+
+          &.half {
+            max-width: 564px;
+            width: 100%;
+          }
+
+          p {
+            color: color(green, darker);
+            font-size: 14px;
+            margin: 0;
+          }
+        }
+
+        // Add padding bottom to prevent button overlap
+        &:has(.btn) {
+          padding-bottom: 80px; // Space for button
+        }
+
+        &:has(.stat) {
+          padding-bottom: 100px; // Space for stat
+        }
+
+        &:has(.image_description) {
+          padding-bottom: 100px; // Space for image description
+        }
+      }
+    }
+  }
+
+  // Alternative approach: Use CSS Grid for more control
+  &.use-grid .cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    align-items: stretch;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}

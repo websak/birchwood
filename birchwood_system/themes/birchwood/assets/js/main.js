@@ -26,14 +26,14 @@ jQuery(".card_carousel").slick({
 		{
 			breakpoint: 1024,
 			settings: {
-				slidesToShow: 3,
+				slidesToShow: 2,
 				slidesToScroll: 1
 			}
 		},
 		{
 			breakpoint: 600,
 			settings: {
-				slidesToShow: 2,
+				slidesToShow: 1,
 				slidesToScroll: 1
 			}
 		},
@@ -48,11 +48,15 @@ jQuery(".card_carousel").slick({
 });
 
 jQuery(".image_carousel").slick({
-			dots: false,
-			arrows: true,
-			slidesToShow: 1,
-			slidesToScroll: 1
+	dots: false,
+	arrows: true,
+	slidesToShow: 1,
+	slidesToScroll: 1,
+	// Add this line to enable fade transition
+	fade: true,
+	cssEase: 'linear' // Recommended for smoother fade transitions
 });
+
 jQuery('.slick-prev-custom').on('click', function () {
 	jQuery('.image_carousel').slick('slickPrev');
 });

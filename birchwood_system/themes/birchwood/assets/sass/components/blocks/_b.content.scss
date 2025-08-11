@@ -1,0 +1,13 @@
+.page-wrapper {
+  .protected-login {
+    .card-content {
+      text-align: center;
+
+      h2 {
+        color: color(green, darker);
+        font-size: 35px;
+        font-weight: $font-700;
+      }
+    }
+  }
+}
