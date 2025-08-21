@@ -46,7 +46,7 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<?php wp_nav_menu(array(
-				'theme_location'	=> 'header_mobile',
+				'theme_location'	=> 'header',
 				'container'			=> false,
 				'depth'				=> 2
 			)); ?>

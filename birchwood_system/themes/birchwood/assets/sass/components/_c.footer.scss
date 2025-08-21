@@ -20,6 +20,11 @@
     top: 0;
   }
 
+  .row {
+    position: relative;
+    z-index: 3;
+  }
+
   h3,
   p,
   ol li,

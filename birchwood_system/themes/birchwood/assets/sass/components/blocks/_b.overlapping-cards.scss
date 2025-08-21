@@ -9,9 +9,15 @@
     /* grid-template-rows: repeat(var(--numcards), var(--card-height)); */
     gap: var(--card-margin);
     padding-bottom: calc(var(--numcards) * var(--card-top-offset));
-    margin-bottom: -35vh;
+    margin-bottom: -350px;
     /* Add padding to create space before sticking starts */
-    padding-top: 35vh;
+    padding-top: 350px;
+
+    @media screen and (max-width: 768px) {
+      padding-top: 450px;
+      margin-bottom: -500px;
+    }
+
   }
 
   #card-1 {
@@ -57,9 +63,11 @@
     padding: 80px;
     transform-origin: 50% 0%;
     will-change: transform;
+
     .btn {
       max-width: 200px;
     }
+
     >div {
       padding-right: 50px;
     }

@@ -127,7 +127,7 @@
                             "allow_in_bindings": 0,
                             "rows": "",
                             "placeholder": "",
-                            "new_lines": "wpautop",
+                            "new_lines": "",
                             "parent_repeater": "field_6867e1815a361"
                         }
                     ]
@@ -153,5 +153,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1751638797
+    "modified": 1754928113
 }

@@ -129,8 +129,12 @@
     display: none;
   }
 
-  .header-mobile {
-
+  .header-mobile { 
+    padding: 0 50px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 3;
     .navbar-toggler {
       border: none;
       background: white;
@@ -138,7 +142,8 @@
       width: 46px;
       height: 45px;
       margin: 0 20px;
-
+      position: relative;
+      z-index: 2;
       &:focus {
         box-shadow: none;
       }
@@ -184,8 +189,11 @@
       position: absolute;
       left: 0;
       right: 0;
-      background: none !important;
+      background: color(green, darker) !important;
 
+      .navbar-collapse  {
+        padding: 20px;
+      }
       .sub-toggle {
         display: none;
       }
@@ -225,7 +233,8 @@
       }
 
       &.open {
-        background-color: color(black) !important;
+        background-color: color(green,darker) !important;
+        z-index: 2000;
       }
     }
 
@@ -276,7 +285,7 @@
     display: block;
 
     .logo {
-      max-width: 150px;
+      max-width: 120px;
     }
 
     ul {
@@ -286,6 +295,9 @@
 
       li {
         margin: 0;
+        a {
+          font-size: 11px;
+        }
       }
     }
   }
@@ -313,5 +325,11 @@
         margin: 0;
       }
     }
+  }
+}
+
+.header-mobile {
+  &:before {
+    height: auto;
   }
 }

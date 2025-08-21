@@ -8,6 +8,73 @@
         font-size: 35px;
         font-weight: $font-700;
       }
+
+      a {
+        &.cta {
+          font-size: 12px;
+          position: relative; // Ensure positioning context for SVG
+
+          svg {
+            position: relative;
+            transition: none; // Disable any default transitions
+          }
+
+          &:hover {
+            svg {
+              animation: fastRelocate 0.6s ease-in-out forwards;
+            }
+          }
+        }
+      }
+    }
+
+    @keyframes fastRelocate {
+      0% {
+        transform: translate(0, 0);
+        opacity: 1;
+      }
+
+      25% {
+        transform: translate(-15px, -15px); // Move further top-left
+        opacity: 0; // Disappear
+      }
+
+      75% {
+        transform: translate(-15px, -15px); // Stay at top-left while invisible
+        opacity: 0; // Stay invisible
+      }
+
+      100% {
+        transform: translate(0, 0); // Return to original position
+        opacity: 1; // Reappear at top-left
+      }
     }
   }
 }
+
+// Alternative version with bounce back effect
+// Replace the above keyframes with this for a bounce-back effect:
+
+/*
+@keyframes fastRelocate {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+
+  30% {
+    transform: translate(-20px, -20px); // Move further top-left
+    opacity: 0;
+  }
+
+  70% {
+    transform: translate(-10px, -10px); // Slightly less top-left
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(0, 0); // Bounce back to original
+    opacity: 1;
+  }
+}
+*/

@@ -411,13 +411,22 @@ remove_menu_page( 'edit-comments.php' );
 
 add_action( 'admin_menu', 'prefix_remove_comments_tl' );
 
+
+$gated_content = get_field('gated_content', 'option');
+
+// if gated content add login screen
+
+if($gated_content === TRUE) :
+
+// gated if statement open
+
 // Handle Gravity Forms Login Authentication
 add_action('gform_after_submission_2', 'process_login_form', 10, 2);
 
 function process_login_form($entry, $form) {
     // Get form field values (adjust field IDs as needed)
     $username = rgar($entry, '1');    // Username/Email field ID
-    $password = rgar($entry, '2');    // Password field ID
+    $password = rgar($entry, '3');    // Password field ID
     
     // Clean the inputs
     $username = sanitize_text_field($username);
@@ -524,7 +533,8 @@ function protect_member_pages() {
         'amenity', 
         'business-plan', 
         'portfolio-analytics', 
-        'downloads'
+        'downloads',
+				'nuclear'
     );
     
     // Check if current page is protected
@@ -583,7 +593,7 @@ function custom_new_user_notification_email($wp_new_user_notification_email, $us
     // Use default WordPress password reset URL
     $default_password_url = network_site_url("wp-login.php?action=rp&key=$key&login=" . rawurlencode($user->user_login), 'login');
     
-    $wp_new_user_notification_email['subject'] = sprintf('[%s] Welcome! Set up your account', $blogname);
+    $wp_new_user_notification_email['subject'] = sprintf('[%s] Welcome to Birchwood Park', $blogname);
     
     $wp_new_user_notification_email['message'] = sprintf(
         "Welcome to %s!\n\n" .
@@ -618,6 +628,7 @@ function add_enhanced_login_links($button, $form) {
                 <p class="register-link">
                     Don\'t have a login? Register for access              
                 </p>
+								<p>To request acess to the portfolio, please submit your <br/> details for review</p>
                 <a href="/register" class="btn btn-register">
                     Register
                     <span class="arrow-icon"></span>
@@ -629,3 +640,6 @@ function add_enhanced_login_links($button, $form) {
     }
     return $button;
 }
+
+// gated content end if statement
+endif;

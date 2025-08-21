@@ -43,13 +43,8 @@ $video_url = $card['video']['url'];
     <div class="stat-content-wrapper"> <?php foreach($card['stats'] as $stat):?>
         <div class="stat">
           <div class="row">
-            <div class="col-md-6">
-              <span><?php echo esc_html($stat['stat']);?></span>
-            </div>
-            <div class="col-md-6">
-              <div class="text">
-                <?php echo $stat['text'];?>
-              </div>
+            <div class="col-md-12">
+              <p><?php echo esc_html($stat['stat']);?><span><?php echo $stat['text'];?></span></p>
             </div>
           </div>
         </div>

@@ -28,8 +28,8 @@ $card = get_field('card');
 
     <section class="<?php echo esc_attr($className); ?>" id="<?php echo esc_attr($id); ?>">
       <div class="container">
-        <div class="row w-100">
-          <div class="col-12">
+        <div class="">
+          <div class="">
             <?php if($card['cards']):?>
             <div id="cards">
               <?php foreach($card['cards'] as $key => $cards):?>
