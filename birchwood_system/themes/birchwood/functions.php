@@ -534,6 +534,7 @@ function protect_member_pages() {
         'business-plan', 
         'portfolio-analytics', 
         'downloads',
+				'privacy-policy',
 				'nuclear'
     );
     
